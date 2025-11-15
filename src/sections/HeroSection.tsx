@@ -1,30 +1,74 @@
-const HeroSection = () => (
-  <section id="home" className="hero-section section-padding relative overflow-hidden">
+const HeroSection = () => {
+  const handleNavigate = (sectionId: string) => {
+    const section = document.getElementById(sectionId)
+    const lenis = (window as any).__lenis as any | undefined
+    if (section && lenis) {
+      lenis.scrollTo(section, {
+        offset: -80,
+        duration: 1.2,
+      })
+    } else if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
+  return (
+  <section id="home" className="hero-section hero-section-height relative overflow-hidden">
     <div className="hero-soft-glow" aria-hidden="true" />
-    <div className="mx-auto grid max-w-6xl gap-12 px-6 sm:px-8 md:grid-cols-[1.05fr_0.95fr] md:items-center">
+    
+    {/* Abstract shapes similar to the image */}
+    <div className="hero-shapes" aria-hidden="true">
+      {/* Top right - large circular shape with peach to reddish-brown gradient */}
+      <div className="hero-shape hero-shape-1" />
+      
+      {/* Middle right - rectangular shape with rounded corner */}
+      <div className="hero-shape hero-shape-2" />
+      
+      {/* Bottom left - curved organic shape */}
+      <div className="hero-shape hero-shape-3" />
+      
+      {/* Bottom middle/right - metallic gold curved shape */}
+      <div className="hero-shape hero-shape-4" />
+      
+      {/* Bottom right - mint green curved shape */}
+      <div className="hero-shape hero-shape-5" />
+      
+      {/* Bottom right - beige curved shape overlapping mint */}
+      <div className="hero-shape hero-shape-6" />
+    </div>
+    
+    <div className="mx-auto grid max-w-6xl gap-8 px-4 sm:px-6 md:grid-cols-[1.05fr_0.95fr] md:items-center relative z-10 w-full h-full">
       <div className="hero-visual relative z-10 order-1 md:order-2" data-aos="fade-left" data-aos-delay="200">
         <div className="hero-card-light">
           <div className="status-pill absolute right-6 top-6">
             <span className="status-indicator" />
             <span className="text-xs uppercase tracking-widest">Phase Ready</span>
           </div>
-          <img src="/assets/home.jpg" alt="Modern clinical research visuals" className="h-full w-full object-cover" />
+          <img src="/assets/product.png" alt="Modern clinical research visuals" className="h-full w-full object-cover" />
         </div>
       </div>
 
-      <div className="relative z-10 space-y-6 order-2 md:order-1">
-        {/* <div className="badge badge-sky">where science meets acceleration</div> */}
-        <h1 className="hero-title text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl" data-aos="fade-up">
-          Translating therapies into .
+      <div className="relative z-10 space-y-4 order-2 md:order-1">
+        <h1 className="hero-title text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl" data-aos="fade-up" data-aos-delay="50">
+          Betaserrta: Botanical extract contract manufacturing &amp; clinical research support.
         </h1>
-        <p className="hero-lead text-base sm:text-lg" data-aos="fade-up" data-aos-delay="100">
-          Betaserrata orchestrates the entire molecule-to-market continuum—uniting advisory brilliance, CDMO expertise,
-          and patient-centric clinical operations under a single digital spine.
+        <p className="hero-lead text-sm sm:text-base" data-aos="fade-up" data-aos-delay="120">
+          Expert solutions for your natural health products—uniting formulation, regulatory know-how, and study guidance under one roof.
         </p>
 
         <div className="hero-actions" data-aos="fade-up" data-aos-delay="200">
-          <button className="cta-primary text-sm uppercase tracking-widest">Explore Solutions</button>
-          <button className="cta-secondary text-sm uppercase tracking-widest">Meet the Team</button>
+          <button 
+            onClick={() => handleNavigate('cdmo')}
+            className="cta-primary text-xs uppercase tracking-widest"
+          >
+            View Our Services
+          </button>
+          <button 
+            onClick={() => handleNavigate('advisory-board')}
+            className="cta-secondary text-xs uppercase tracking-widest"
+          >
+            Meet Our Advisors
+          </button>
         </div>
 
         {/* <div className="hero-metrics pt-10">
@@ -38,7 +82,7 @@ const HeroSection = () => (
       </div>
     </div>
   </section>
-)
+  )
+}
 
 export default HeroSection
-

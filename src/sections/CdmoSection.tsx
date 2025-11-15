@@ -1,38 +1,70 @@
-import { cdmoHighlights } from '../data'
+const cdmoHighlights = [
+  {
+    label: '01',
+    title: 'Concept development',
+    detail:
+      'Collaborative blueprinting sessions aligning botanical IP, dosage forms, and regulatory pathways before the first batch is produced.',
+  },
+  {
+    label: '02',
+    title: 'High-purity extraction',
+    detail:
+      'Closed-loop extraction, solvent recovery, and compositional fingerprinting calibrated for premium herbal actives.',
+  },
+  {
+    label: '03',
+    title: 'Market-ready release',
+    detail:
+      'Stability, QA, and documentation support so every lot is compliant and ready for global launch windows.',
+  },
+]
+
+const cdmoChips = ['High-purity extracts', 'End-to-end CDMO', 'Reg-ready dossiers']
 
 const CdmoSection = () => (
-  <section id="cdmo" className="section-padding cdmo-section">
-    <div className="mx-auto max-w-6xl px-6 sm:px-8">
-      <div className="cdmo-header" data-aos="fade-up">
-        <span className="cdmo-tag">CDMO Services</span>
-        <h2 className="cdmo-heading">Converging chemistry, analytics, and tech transfer.</h2>
-        <p className="cdmo-subtext">
-          Betaserrata partners across the molecule lifecycle— compressing scale-up timelines, orchestrating compliant
-          tech transfers, and building sustainable manufacturing rhythms.
-        </p>
-        {/* <div className="cdmo-pill-row">
-          {cdmoPillars.map((pillar) => (
-            <span key={pillar} className="cdmo-pill">
-              {pillar}
-            </span>
-          ))}
-        </div> */}
-      </div>
+  <section id="cdmo" className="section-padding cdmo-section relative overflow-hidden">
+    <div className="section-shapes section-shapes--cdmo" aria-hidden="true">
+      <div className="section-shape section-shape-1" />
+      <div className="section-shape section-shape-2" />
+      <div className="section-shape section-shape-3" />
+    </div>
+    <div className="mx-auto max-w-6xl px-6 sm:px-8 relative z-10">
+      <div className="cdmo-shell">
+        <div className="cdmo-panel glass-panel-light" data-aos="fade-right">
+          <span className="cdmo-tag">CDMO Services</span>
+          <h2 className="cdmo-heading">Specialized formulation and manufacturing with high-purity herbal extracts.</h2>
+          <p className="cdmo-subtext">
+            Betaserrata operates as a dedicated and specialised channel in the creation of premium-quality formulations built upon high-purity herbal extracts. We offer comprehensive, end-to-end manufacturing solutions, from concept development.
+          </p>
+          <p className="cdmo-subtext cdmo-subtext-muted">
+            Partner with Betaserrata to transform your vision into a market-ready product, backed by specialized botanical knowledge and a commitment to pharmaceutical-grade quality.
+          </p>
 
-      <div className="cdmo-grid">
-        {cdmoHighlights.map((highlight, index) => (
-          <article key={highlight.title} className="cdmo-card" data-aos="fade-up" data-aos-delay={index * 150}>
-            <div className="cdmo-card-metric">{highlight.metrics}</div>
-            <h3 className="cdmo-card-title">{highlight.title}</h3>
-            <p className="cdmo-card-body">{highlight.description}</p>
-            <button type="button" className="cdmo-card-link">
-              Learn more
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-4 w-4">
-                <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-          </article>
-        ))}
+          {/* <div className="cdmo-chip-row">
+            {cdmoChips.map((chip) => (
+              <span key={chip} className="cdmo-chip">
+                {chip}
+              </span>
+            ))}
+          </div> */}
+
+          <div className="cdmo-legacy">
+            <span>Our legacy</span>
+            <a href="https://betaserrata.de" target="_blank" rel="noreferrer">
+              betaserrata.de
+            </a>
+          </div>
+        </div>
+
+        <div className="cdmo-highlight-stack" data-aos="fade-left">
+          {cdmoHighlights.map((item, index) => (
+            <article key={item.title} className="cdmo-highlight-card" data-aos-delay={index * 100}>
+              <span className="cdmo-highlight-index">{item.label}</span>
+              <h3 className="cdmo-highlight-title">{item.title}</h3>
+              <p className="cdmo-highlight-detail">{item.detail}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </div>
   </section>

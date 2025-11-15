@@ -6,19 +6,44 @@
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-display: "Inter", "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  --clr-deep-900: #1e2457;
-  --clr-deep-700: #282f6b;
-  --clr-primary-500: #266fb1;
-  --clr-primary-300: #5a95cc;
-  --clr-primary-100: #e5f1fb;
-  --clr-accent-500: #92ca29;
-  --clr-accent-300: #b1dc62;
-  --clr-accent-100: #e9f7cf;
-  --clr-neutral-900: #0f172a;
-  --clr-neutral-600: #465065;
-  --clr-neutral-400: #7b879d;
-  --clr-neutral-200: #d9e0ec;
-  --clr-surface: #f7fbff;
+  /* Base colors from image */
+  --clr-cream: #faf8f5;
+  --clr-cream-light: #fefcf9;
+  --clr-black: #1a1a1a;
+  
+  /* Earth tones - warm browns and beiges */
+  --clr-peach-light: #e8d5c4;
+  --clr-peach: #d4c4b0;
+  --clr-beige: #c9b8a3;
+  --clr-brown-light: #a67c52;
+  --clr-brown: #8b6f47;
+  --clr-brown-dark: #6b4423;
+  --clr-reddish-brown: #8b5a3c;
+  
+  /* Metallic gold */
+  --clr-gold: #d4af37;
+  --clr-gold-dark: #c9a227;
+  --clr-gold-light: #e5c866;
+  
+  /* Mint green / sage */
+  --clr-mint: #a8c5a0;
+  --clr-mint-light: #b8d5b0;
+  --clr-sage: #9bb5a3;
+  
+  /* Legacy mappings for compatibility */
+  --clr-deep-900: #1a1a1a;
+  --clr-deep-700: #2a2a2a;
+  --clr-primary-500: #8b6f47;
+  --clr-primary-300: #a67c52;
+  --clr-primary-100: #e8d5c4;
+  --clr-accent-500: #d4af37;
+  --clr-accent-300: #e5c866;
+  --clr-accent-100: #f5e8b8;
+  --clr-neutral-900: #1a1a1a;
+  --clr-neutral-600: #5a5a5a;
+  --clr-neutral-400: #8a8a8a;
+  --clr-neutral-200: #e0e0e0;
+  --clr-surface: #faf8f5;
 
   color-scheme: light;
 }
@@ -55,4 +80,5 @@ a {
 
 button {
   font-family: var(--font-display);
+  cursor: pointer;
 }

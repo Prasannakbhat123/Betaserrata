@@ -1,8 +1,13 @@
 import { trainingTracks } from '../data'
 
 const TrainingSection = () => (
-  <section id="training" className="section-padding bg-emerald-50/50">
-    <div className="mx-auto max-w-6xl px-6 sm:px-8">
+  <section id="training" className="section-padding relative overflow-hidden" style={{ background: 'var(--clr-cream)' }}>
+    <div className="section-shapes section-shapes--training" aria-hidden="true">
+      <div className="section-shape section-shape-1" />
+      <div className="section-shape section-shape-2" />
+      <div className="section-shape section-shape-3" />
+    </div>
+    <div className="mx-auto max-w-6xl px-6 sm:px-8 relative z-10">
       <div className="badge badge-sky mb-4" data-aos="fade-up">Clinical Research Training</div>
       <div className="grid gap-14 md:grid-cols-[0.8fr_1.2fr] md:items-start">
         <div className="space-y-6" data-aos="fade-right">

@@ -1,8 +1,13 @@
 import { contactPoints } from '../data'
 
 const ContactSection = () => (
-  <section id="contact" className="section-padding bg-white">
-    <div className="mx-auto max-w-6xl px-6 sm:px-8">
+  <section id="contact" className="section-padding bg-white relative overflow-hidden">
+    <div className="section-shapes section-shapes--contact" aria-hidden="true">
+      <div className="section-shape section-shape-1" />
+      <div className="section-shape section-shape-2" />
+      <div className="section-shape section-shape-3" />
+    </div>
+    <div className="mx-auto max-w-6xl px-6 sm:px-8 relative z-10">
       <div className="badge badge-sky mb-4" data-aos="fade-up">Contact Us</div>
       <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
         <div className="relative overflow-hidden rounded-3xl border border-slate-100 bg-gradient-to-br from-white via-white to-sky-50 px-8 py-10 contact-card-light shadow-xl shadow-sky-100/60" data-aos="fade-right">

@@ -17,31 +17,18 @@ export const navItems: Array<{ id: NavSection; label: string }> = [
 
 export const boardMembers = [
   {
-    name: 'Dr. Aisha Varma',
-    title: 'Chief Medical Advisor',
-    expertise: 'Immunology',
-    summary:
-      'Former Head of Translational Science at GlobalBio, guiding 80+ Phase II/III programs spanning oncology and rare disorders.',
-    image:
-      'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=640&q=80',
+    name: 'Prof. Dr.H.P.T Ammon',
+    title: 'Chief Scientific Advisor',
+    expertise: '',
+    summary: '',
+    image: '/assets/ammon.webp',
   },
   {
-    name: 'Prof. Li Wei',
-    title: 'Clinical Chair',
-    expertise: 'Adaptive Trial Design',
-    summary:
-      'Architect of data-driven frameworks adopted by top-10 pharma companies to shrink approval timelines by 18% on average.',
-    image:
-      'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=640&q=80',
-  },
-  {
-    name: 'Dr. Sofia Martinez',
-    title: 'Regulatory Affairs Mentor',
-    expertise: 'Global Harmonization',
-    summary:
-      'Advised cross-continent filings for EMA, US FDA, and CDSCO with a 96% first-pass clearance rate in the past decade.',
-    image:
-      'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=640&q=80',
+    name: 'Dr. G.B Singh',
+    title: 'Chief Scientific Advisor',
+    expertise: '',
+    summary: '',
+    image: '/assets/gbsingh.webp',
   },
 ]
 

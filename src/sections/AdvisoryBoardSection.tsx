@@ -1,46 +1,40 @@
 import { boardMembers } from '../data'
 
 const AdvisoryBoardSection = () => (
-  <section id="advisory-board" className="section-padding bg-white">
-    <div className="mx-auto max-w-6xl px-6 sm:px-8">
+  <section id="advisory-board" className="section-padding bg-white relative overflow-hidden">
+    <div className="section-shapes section-shapes--advisory" aria-hidden="true">
+      <div className="section-shape section-shape-1" />
+      <div className="section-shape section-shape-2" />
+      <div className="section-shape section-shape-3" />
+    </div>
+    <div className="mx-auto max-w-6xl px-6 sm:px-8 relative z-10">
       <div className="advisory-header" data-aos="fade-up">
         <div className="advisory-emblem">Advisory Board</div>
-        <h2 className="advisory-title">Guided by domain leaders shaping next-gen clinical pathways.</h2>
+        <h2 className="advisory-title">Ancient Wisdom, Evolved Through Research</h2>
         <p className="advisory-description">
-          Meet the mentors orchestrating molecule strategy, regulatory alignment, and patient experience—each bringing
-          decades of proven clinical breakthroughs to every engagement.
+          With years of research, we evolved the Boswellia plant extracts into an easy-to-access, over-the-counter tablet for those who need it. Essentially effective for people suffering from types of Osteoarthritis, this naturally produced remedy has great benefits. And have been used as a medicine in India since many moons.
         </p>
         <div className="advisory-divider" />
       </div>
 
-      <div className="mt-12 grid gap-8 md:grid-cols-3">
+      <div className="mt-12 grid gap-12 md:grid-cols-2 lg:gap-16">
         {boardMembers.map((member, index) => (
-          <article key={member.name} className="advisor-card glass-panel-light flex flex-col gap-6" data-aos="fade-up" data-aos-delay={index * 100}>
-            <div className="relative h-48 w-full overflow-hidden">
-              <img src={member.image} alt={member.name} className="h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-linear-to-t from-slate-900/45 via-slate-900/10 to-transparent" />
-              <span className="advisor-chip advisor-chip-overlay">
-                <span className="advisor-chip-icon" />
-                {member.expertise}
-              </span>
-            </div>
-            <div className="advisor-card-top px-6 pb-6">
-              <div className="advisor-meta">
-                <div>
-                  <p className="font-display text-xl font-semibold text-slate-900">{member.name}</p>
-                  <p className="micro-meta micro-meta-muted">{member.title}</p>
+          <article key={member.name} className="advisor-card-large group" data-aos="fade-up" data-aos-delay={index * 100}>
+            <div className="relative aspect-[3/4] w-full max-h-[70vh] overflow-hidden rounded-2xl">
+              <img 
+                src={member.image} 
+                alt={member.name} 
+                className="h-full w-full object-cover object-center object-top transition-transform duration-1000 ease-in-out group-hover:scale-105" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-90 transition-opacity duration-1000 ease-in-out group-hover:opacity-95" />
+              
+              {/* Name and Position Overlay */}
+              <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                <div className="space-y-2">
+                  <h3 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">{member.name}</h3>
+                  <p className="text-lg font-medium text-white/90 sm:text-xl">{member.title}</p>
                 </div>
               </div>
-              <p className="advisor-body">{member.summary}</p>
-              {/* <div className="advisor-footer">
-                <span className="micro-meta micro-meta-muted">Global programs • 6 continents</span>
-                <button type="button" className="advisor-link">
-                  View profile
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-4 w-4">
-                    <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-              </div> */}
             </div>
           </article>
         ))}
