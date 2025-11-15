@@ -19,8 +19,6 @@ const cdmoHighlights = [
   },
 ]
 
-const cdmoChips = ['High-purity extracts', 'End-to-end CDMO', 'Reg-ready dossiers']
-
 const CdmoSection = () => (
   <section id="cdmo" className="section-padding cdmo-section relative overflow-hidden">
     <div className="section-shapes section-shapes--cdmo" aria-hidden="true">
