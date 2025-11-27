@@ -14,10 +14,10 @@ const flows = [
   },
   {
     id: 'cro',
-    eyebrow: 'CRO research intake',
-    title: 'Register trials and research partners',
-    description: 'A four-step CRO wizard with progress tracking, governance toggles, and rapid concierge follow-up.',
-    stats: ['Progress-based form', 'Compliance toggles', 'Auto-save guidance'],
+    eyebrow: 'Clinical Research Consulting',
+    title: 'Independent Clinical Research Consulting Services',
+    description: 'Expert consulting for BA/BE studies, Phase I–III trials, and pharmacovigilance. From study design and regulatory strategy to monitoring, data management, and quality systems.',
+    stats: ['Study Design & Regulatory', 'Monitoring & Audit', 'Data & Medical Writing', 'Quality & Training', 'Pharmacovigilance'],
     image:
       'https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80&sat=-15',
     accent: 'from-white via-[#f3f8ff] to-[#e1ecff]',
@@ -38,7 +38,7 @@ const FlowShowcaseSection = () => {
             Explore Interactive Flows
           </h2>
           <p className="mx-auto max-w-3xl text-base text-[#7a6654]">
-            Product buyers can add to cart, review billing, and confirm by OTP, while CRO partners step through a guided registration.
+            Product buyers can add to cart, review billing, and confirm by OTP. Clinical research partners can register for consulting services covering BA/BE studies, Phase I–III trials, monitoring, data management, and pharmacovigilance.
           </p>
         </div>
 

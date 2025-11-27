@@ -169,22 +169,22 @@ const ProductCheckoutPage = () => {
       <Navbar items={navItems} activeSection="home" onNavigate={handleNavigate} />
       <section className="pb-16 pt-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <header className="mb-10 flex flex-wrap items-center justify-between gap-4">
-          <div>
+        <header className="mb-6 sm:mb-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+          <div className="flex-1">
             <p className="text-xs font-semibold uppercase tracking-[0.32em] text-slate-500">Checkout</p>
-            <h1 className="mt-2 text-3xl font-semibold text-slate-900">Confirm delivery & finish verification</h1>
-            <p className="mt-2 text-sm text-slate-600">Review each line item, capture delivery preferences, and lock the slot with a quick code.</p>
+            <h1 className="mt-2 text-2xl sm:text-3xl font-semibold text-slate-900">Confirm delivery & finish verification</h1>
+            <p className="mt-2 text-xs sm:text-sm text-slate-600">Review each line item, capture delivery preferences, and lock the slot with a quick code.</p>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-2 sm:gap-3 flex-shrink-0">
             <Link
               to="/product"
-              className="inline-flex items-center justify-center rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600 transition hover:border-slate-300 hover:text-slate-900"
+              className="inline-flex items-center justify-center rounded-full border border-slate-200 px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-slate-600 transition hover:border-slate-300 hover:text-slate-900"
             >
               Edit cart
             </Link>
             <Link
               to="/"
-              className="inline-flex items-center justify-center rounded-full border border-slate-900 bg-slate-900 px-4 py-2 text-sm font-semibold uppercase tracking-[0.32em] text-white transition hover:bg-slate-800 hover:border-slate-800"
+              className="inline-flex items-center justify-center rounded-full border border-slate-900 bg-slate-900 px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.32em] text-white transition hover:bg-slate-800 hover:border-slate-800"
               style={{ color: 'white' }}
             >
               Homepage
@@ -193,7 +193,7 @@ const ProductCheckoutPage = () => {
         </header>
 
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="space-y-6">
+          <div className="space-y-6 order-1">
             <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-900/5 backdrop-blur">
               <p className="text-xs font-semibold uppercase tracking-[0.32em] text-slate-500">Order summary</p>
               <h2 className="mt-2 text-2xl font-semibold text-slate-900">Products in cart</h2>
@@ -249,7 +249,7 @@ const ProductCheckoutPage = () => {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-900/5 backdrop-blur">
+            <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-900/5 backdrop-blur order-3 lg:order-2">
               <p className="text-xs font-semibold uppercase tracking-[0.32em] text-slate-500">Fulfillment</p>
               <h2 className="mt-2 text-2xl font-semibold text-slate-900">Playbook immediately after checkout</h2>
               <div className="mt-4 space-y-3 text-sm text-slate-600">
@@ -263,7 +263,7 @@ const ProductCheckoutPage = () => {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-900/5 backdrop-blur">
+          <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-900/5 backdrop-blur order-2">
             <p className="text-xs font-semibold uppercase tracking-[0.32em] text-slate-500">Secure checkout</p>
             <h2 className="mt-2 text-2xl font-semibold text-slate-900">Contact & verification</h2>
 

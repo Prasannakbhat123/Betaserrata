@@ -127,7 +127,7 @@ const ProductFlowPage = () => {
       <Navbar items={navItems} activeSection="home" onNavigate={handleNavigate} />
       
       {/* Hero Section */}
-      <section className="hero-section hero-section-height relative overflow-hidden">
+      <section className="hero-section relative overflow-hidden pt-20 sm:pt-24 min-h-[calc(100vh-5rem)] sm:min-h-[calc(100vh-6rem)] flex items-center">
         <div className="hero-soft-glow" aria-hidden="true" />
         
         {/* Abstract shapes matching homepage */}
@@ -140,14 +140,14 @@ const ProductFlowPage = () => {
           <div className="hero-shape hero-shape-6" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10 h-full flex items-center">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 w-full">
-            <div className="flex flex-col justify-center">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10 w-full py-12 sm:py-16">
+          <div className="grid gap-8 lg:gap-12 lg:grid-cols-2 w-full">
+            <div className="flex flex-col justify-center order-2 lg:order-1">
               <div className="status-pill w-fit">
                 <span className="status-indicator" />
                 <span className="text-xs uppercase tracking-widest">Clinically Validated</span>
               </div>
-              <h1 className="hero-title mt-6 text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+              <h1 className="hero-title mt-4 sm:mt-6 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight">
                 Premium Ayurvedic
                 <span className="block mt-2">
                   Therapeutics
@@ -156,45 +156,45 @@ const ProductFlowPage = () => {
               <p className="hero-lead mt-4 text-sm sm:text-base">
                 Discover our scientifically-backed botanical formulations that blend ancient Ayurvedic wisdom with modern pharmaceutical standards. Each product is GMP-certified and third-party tested for purity and potency.
               </p>
-              <div className="hero-actions mt-6">
+              <div className="hero-actions mt-6 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                 <button
                   onClick={() => document.getElementById('products-section')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="cta-primary text-xs uppercase tracking-widest"
+                  className="cta-primary text-xs uppercase tracking-widest w-full sm:w-auto"
                 >
                   Shop Products
                 </button>
                 <button
                   onClick={() => document.getElementById('products-section')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="cta-secondary text-xs uppercase tracking-widest"
+                  className="cta-secondary text-xs uppercase tracking-widest w-full sm:w-auto"
                 >
                   Learn More
                 </button>
               </div>
             </div>
             <div className="relative z-10 order-1 lg:order-2">
-              <div className="relative grid grid-cols-2 gap-4">
-                <div className="space-y-4">
+              <div className="relative grid grid-cols-2 gap-2 sm:gap-4">
+                <div className="space-y-2 sm:space-y-4">
                   <img
                     src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=600&q=80"
                     alt="Ayurvedic herbs"
-                    className="h-48 w-full rounded-2xl object-cover shadow-xl"
+                    className="h-32 sm:h-48 w-full rounded-xl sm:rounded-2xl object-cover shadow-xl"
                   />
                   <img
                     src="https://images.unsplash.com/photo-1464639351491-a172c2aa2911?auto=format&fit=crop&w=600&q=80"
                     alt="Botanical capsules"
-                    className="h-64 w-full rounded-2xl object-cover shadow-xl"
+                    className="h-40 sm:h-64 w-full rounded-xl sm:rounded-2xl object-cover shadow-xl"
                   />
                 </div>
-                <div className="space-y-4 pt-8">
+                <div className="space-y-2 sm:space-y-4 pt-4 sm:pt-8">
                   <img
                     src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80"
                     alt="Herbal gel"
-                    className="h-64 w-full rounded-2xl object-cover shadow-xl"
+                    className="h-40 sm:h-64 w-full rounded-xl sm:rounded-2xl object-cover shadow-xl"
                   />
                   <img
                     src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=80"
                     alt="Natural ingredients"
-                    className="h-48 w-full rounded-2xl object-cover shadow-xl"
+                    className="h-32 sm:h-48 w-full rounded-xl sm:rounded-2xl object-cover shadow-xl"
                   />
                 </div>
               </div>
@@ -206,42 +206,42 @@ const ProductFlowPage = () => {
       {/* Products Section */}
       <section id="products-section" className="pb-16 pt-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <header className="mb-12 text-center">
-            <p className="text-sm font-semibold uppercase tracking-wider text-slate-600">Our Collection</p>
-            <h2 className="mt-2 text-4xl font-bold text-slate-900">Featured Products</h2>
-            <p className="mt-4 text-lg text-slate-600">Carefully crafted formulations for your wellness journey</p>
+          <header className="mb-8 sm:mb-12 text-center px-2">
+            <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-slate-600">Our Collection</p>
+            <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900">Featured Products</h2>
+            <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-slate-600">Carefully crafted formulations for your wellness journey</p>
           </header>
 
-          <div className="grid gap-8 lg:grid-cols-[1fr_380px]">
-          <div className="space-y-6">
+          <div className="grid gap-6 lg:gap-8 lg:grid-cols-[1fr_380px]">
+          <div className="space-y-4 sm:space-y-6 order-1">
             {productCatalog.map((product) => (
               <article
                 key={product.id}
-                className="flex gap-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md"
+                className="flex flex-col sm:flex-row gap-4 sm:gap-6 rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 shadow-sm transition hover:shadow-md"
               >
-                <div className="relative h-40 w-40 flex-shrink-0 overflow-hidden rounded-xl bg-slate-100">
+                <div className="relative h-48 sm:h-40 w-full sm:w-40 flex-shrink-0 overflow-hidden rounded-xl bg-slate-100">
                   <img src={product.image} alt={product.name} className="h-full w-full object-cover" />
                   <div className="absolute left-2 top-2 rounded-md bg-white/95 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-slate-700 shadow-sm backdrop-blur-sm">
                     {product.badge}
                   </div>
                 </div>
 
-                <div className="flex flex-1 flex-col">
+                <div className="flex flex-1 flex-col min-w-0">
                   <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-slate-900">{product.name}</h3>
-                      <p className="mt-1 text-sm text-slate-500">{product.volume}</p>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg sm:text-xl font-semibold text-slate-900">{product.name}</h3>
+                      <p className="mt-1 text-xs sm:text-sm text-slate-500">{product.volume}</p>
                     </div>
                   </div>
 
-                  <p className="mt-3 text-sm leading-relaxed text-slate-600">{product.description}</p>
+                  <p className="mt-2 sm:mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">{product.description}</p>
 
-                  <div className="mt-3 flex items-center gap-2">
+                  <div className="mt-2 sm:mt-3 flex items-center gap-2 flex-wrap">
                     <div className="flex items-center gap-1">
                       {Array.from({ length: 5 }).map((_, i) => (
                         <svg
                           key={i}
-                          className={`h-4 w-4 ${i < Math.floor(product.rating) ? 'text-amber-400' : 'text-slate-300'}`}
+                          className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${i < Math.floor(product.rating) ? 'text-amber-400' : 'text-slate-300'}`}
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -249,14 +249,14 @@ const ProductFlowPage = () => {
                         </svg>
                       ))}
                     </div>
-                    <span className="text-sm font-medium text-slate-700">{product.rating}</span>
+                    <span className="text-xs sm:text-sm font-medium text-slate-700">{product.rating}</span>
                     <span className="text-xs text-slate-500">({product.reviewCount} reviews)</span>
                   </div>
 
-                  <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-xs text-slate-600">
+                  <ul className="mt-2 sm:mt-3 flex flex-wrap gap-x-3 sm:gap-x-5 gap-y-1.5 text-xs text-slate-600">
                     {product.highlights.map((text) => (
                       <li key={text} className="flex items-center gap-1.5">
-                        <svg className="h-4 w-4 flex-shrink-0 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <svg className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                         </svg>
                         <span>{text}</span>
@@ -264,37 +264,37 @@ const ProductFlowPage = () => {
                     ))}
                   </ul>
 
-                  <div className="mt-auto flex items-center justify-between gap-4 border-t border-slate-100 pt-4">
-                    <div className="flex items-center gap-3">
+                  <div className="mt-auto flex flex-row items-center justify-between gap-3 sm:gap-4 border-t border-slate-100 pt-3 sm:pt-4">
+                    <div className="flex items-center gap-3 flex-1 min-w-0">
                       <button
                         type="button"
                         onClick={() => setSelectedProduct(product.id)}
-                        className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+                        className="rounded-lg border border-slate-200 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 transition hover:bg-slate-50 whitespace-nowrap"
                       >
                         Know More
                       </button>
-                      <div>
-                        <p className="text-2xl font-bold text-slate-900">{formatCurrency(product.price)}</p>
+                      <div className="min-w-0">
+                        <p className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900 truncate">{formatCurrency(product.price)}</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3 rounded-full border border-slate-200 bg-slate-50 px-4 py-2.5">
+                    <div className="flex items-center gap-2 sm:gap-3 rounded-full border border-slate-200 bg-slate-50 px-2 sm:px-3 lg:px-4 py-1.5 sm:py-2 lg:py-2.5 shrink-0">
                       <button
                         type="button"
                         onClick={() => handleQuantityChange(product.id, -1)}
                         disabled={!cart[product.id]}
-                        className="flex h-7 w-7 items-center justify-center rounded-full text-slate-600 transition hover:bg-white hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-40"
+                        className="flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full text-slate-600 transition hover:bg-white hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-40"
                       >
-                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <svg className="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" />
                         </svg>
                       </button>
-                      <span className="min-w-[24px] text-center text-base font-semibold text-slate-900">{cart[product.id] || 0}</span>
+                      <span className="min-w-[20px] sm:min-w-[24px] text-center text-sm sm:text-base font-semibold text-slate-900">{cart[product.id] || 0}</span>
                       <button
                         type="button"
                         onClick={() => handleQuantityChange(product.id, 1)}
-                        className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 text-white transition hover:bg-slate-800"
+                        className="flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-slate-900 text-white transition hover:bg-slate-800"
                       >
-                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <svg className="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
                         </svg>
                       </button>
@@ -305,30 +305,30 @@ const ProductFlowPage = () => {
             ))}
           </div>
 
-          <div className="lg:sticky lg:top-24 lg:self-start">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h2 className="text-lg font-semibold text-slate-900">Order Summary</h2>
+          <div className="lg:sticky lg:top-24 lg:self-start order-2">
+            <div className="rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 shadow-sm">
+              <h2 className="text-base sm:text-lg font-semibold text-slate-900">Order Summary</h2>
 
-              <div className="mt-6 space-y-4">
+              <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
                 {hasCartItems ? (
                   productCatalog
                     .filter((product) => cart[product.id])
                     .map((product) => (
-                      <div key={product.id} className="flex items-center justify-between text-sm">
-                        <div className="flex-1">
-                          <p className="font-medium text-slate-900">{product.name}</p>
+                      <div key={product.id} className="flex items-center justify-between text-xs sm:text-sm">
+                        <div className="flex-1 min-w-0 pr-2">
+                          <p className="font-medium text-slate-900 truncate">{product.name}</p>
                           <p className="text-xs text-slate-500">Qty: {cart[product.id]}</p>
                         </div>
-                        <p className="font-semibold text-slate-900">{formatCurrency(product.price * (cart[product.id] || 0))}</p>
+                        <p className="font-semibold text-slate-900 whitespace-nowrap">{formatCurrency(product.price * (cart[product.id] || 0))}</p>
                       </div>
                     ))
                 ) : (
-                  <div className="rounded-xl border border-dashed border-slate-200 bg-slate-50 px-4 py-8 text-center text-sm text-slate-500">
+                  <div className="rounded-xl border border-dashed border-slate-200 bg-slate-50 px-4 py-6 sm:py-8 text-center text-xs sm:text-sm text-slate-500">
                     Your cart is empty
                   </div>
                 )}
 
-                <div className="space-y-2 border-t border-slate-100 pt-4 text-sm">
+                <div className="space-y-2 border-t border-slate-100 pt-3 sm:pt-4 text-xs sm:text-sm">
                   <div className="flex items-center justify-between text-slate-600">
                     <span>Subtotal</span>
                     <span className="font-medium text-slate-900">{formatCurrency(subtotal)}</span>
@@ -341,14 +341,14 @@ const ProductFlowPage = () => {
                     <span>Shipping</span>
                     <span className="font-medium text-slate-900">{formatCurrency(fulfillmentFee)}</span>
                   </div>
-                  <div className="flex items-center justify-between border-t border-slate-200 pt-3 text-base font-bold text-slate-900">
+                  <div className="flex items-center justify-between border-t border-slate-200 pt-2 sm:pt-3 text-sm sm:text-base font-bold text-slate-900">
                     <span>Total</span>
                     <span>{formatCurrency(totalDue)}</span>
                   </div>
                 </div>
 
                 {notice && (
-                  <div className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-medium text-rose-700">
+                  <div className="rounded-xl border border-rose-200 bg-rose-50 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-medium text-rose-700">
                     {notice}
                   </div>
                 )}
@@ -357,7 +357,7 @@ const ProductFlowPage = () => {
                   type="button"
                   onClick={handleProceedToCheckout}
                   disabled={!hasCartItems}
-                  className="w-full rounded-xl bg-slate-900 px-4 py-3.5 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:bg-slate-300"
+                  className="w-full rounded-xl bg-slate-900 px-4 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:bg-slate-300"
                 >
                   Proceed to Checkout
                 </button>
@@ -366,7 +366,7 @@ const ProductFlowPage = () => {
                   <button
                     type="button"
                     onClick={() => setCart({})}
-                    className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-medium text-slate-600 transition hover:bg-slate-50"
+                    className="w-full rounded-xl border border-slate-200 px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-medium text-slate-600 transition hover:bg-slate-50"
                   >
                     Clear Cart
                   </button>
@@ -391,43 +391,43 @@ const ProductFlowPage = () => {
 
       {selectedProductData && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-4 backdrop-blur-sm" 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-2 sm:p-4 backdrop-blur-sm" 
           onClick={() => setSelectedProduct(null)}
         >
           <div 
-            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto overscroll-contain rounded-3xl border border-slate-200 bg-white shadow-2xl" 
+            className="relative w-full max-w-4xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto overscroll-contain rounded-xl sm:rounded-3xl border border-slate-200 bg-white shadow-2xl" 
             onClick={(e) => e.stopPropagation()}
             onWheel={(e) => e.stopPropagation()}
           >
             <button
               type="button"
               onClick={() => setSelectedProduct(null)}
-              className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition hover:bg-slate-50"
+              className="absolute right-2 top-2 sm:right-4 sm:top-4 flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition hover:bg-slate-50 z-10"
             >
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
-            <div className="grid gap-8 p-8 md:grid-cols-[400px_1fr]">
-              <div className="relative overflow-hidden rounded-2xl bg-slate-100">
+            <div className="grid gap-4 sm:gap-6 lg:gap-8 p-4 sm:p-6 lg:p-8 md:grid-cols-[300px_1fr] lg:grid-cols-[400px_1fr]">
+              <div className="relative h-64 sm:h-80 md:h-auto overflow-hidden rounded-xl sm:rounded-2xl bg-slate-100">
                 <img src={selectedProductData.image} alt={selectedProductData.name} className="h-full w-full object-cover" />
-                <div className="absolute left-4 top-4 rounded-lg bg-white/95 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-slate-700 shadow-sm backdrop-blur-sm">
+                <div className="absolute left-2 top-2 sm:left-4 sm:top-4 rounded-lg bg-white/95 px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wide text-slate-700 shadow-sm backdrop-blur-sm">
                   {selectedProductData.badge}
                 </div>
               </div>
 
               <div className="flex flex-col">
                 <div>
-                  <h2 className="text-3xl font-bold text-slate-900">{selectedProductData.name}</h2>
-                  <p className="mt-2 text-sm text-slate-600">{selectedProductData.volume}</p>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">{selectedProductData.name}</h2>
+                  <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-slate-600">{selectedProductData.volume}</p>
 
-                  <div className="mt-4 flex items-center gap-2">
+                  <div className="mt-3 sm:mt-4 flex items-center gap-2 flex-wrap">
                     <div className="flex items-center gap-1">
                       {Array.from({ length: 5 }).map((_, i) => (
                         <svg
                           key={i}
-                          className={`h-5 w-5 ${i < Math.floor(selectedProductData.rating) ? 'text-amber-400' : 'text-slate-300'}`}
+                          className={`h-4 w-4 sm:h-5 sm:w-5 ${i < Math.floor(selectedProductData.rating) ? 'text-amber-400' : 'text-slate-300'}`}
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -435,21 +435,21 @@ const ProductFlowPage = () => {
                         </svg>
                       ))}
                     </div>
-                    <span className="text-base font-semibold text-slate-700">{selectedProductData.rating}</span>
-                    <span className="text-sm text-slate-500">({selectedProductData.reviewCount} reviews)</span>
+                    <span className="text-sm sm:text-base font-semibold text-slate-700">{selectedProductData.rating}</span>
+                    <span className="text-xs sm:text-sm text-slate-500">({selectedProductData.reviewCount} reviews)</span>
                   </div>
 
-                  <div className="mt-6">
-                    <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500">Description</h3>
-                    <p className="mt-2 leading-relaxed text-slate-700">{selectedProductData.detailedDescription}</p>
+                  <div className="mt-4 sm:mt-6">
+                    <h3 className="text-xs sm:text-sm font-semibold uppercase tracking-wide text-slate-500">Description</h3>
+                    <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-700">{selectedProductData.detailedDescription}</p>
                   </div>
 
-                  <div className="mt-6">
-                    <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500">Key Features</h3>
-                    <ul className="mt-3 space-y-2">
+                  <div className="mt-4 sm:mt-6">
+                    <h3 className="text-xs sm:text-sm font-semibold uppercase tracking-wide text-slate-500">Key Features</h3>
+                    <ul className="mt-2 sm:mt-3 space-y-1.5 sm:space-y-2">
                       {selectedProductData.highlights.map((text) => (
-                        <li key={text} className="flex items-center gap-2 text-sm text-slate-700">
-                          <svg className="h-5 w-5 flex-shrink-0 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <li key={text} className="flex items-center gap-2 text-xs sm:text-sm text-slate-700">
+                          <svg className="h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                           </svg>
                           <span>{text}</span>
@@ -459,30 +459,30 @@ const ProductFlowPage = () => {
                   </div>
                 </div>
 
-                <div className="mt-auto flex items-center justify-between gap-4 border-t border-slate-200 pt-6">
+                <div className="mt-4 sm:mt-auto flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 border-t border-slate-200 pt-4 sm:pt-6">
                   <div>
-                    <p className="text-sm text-slate-500">Price</p>
-                    <p className="text-3xl font-bold text-slate-900">{formatCurrency(selectedProductData.price)}</p>
+                    <p className="text-xs sm:text-sm text-slate-500">Price</p>
+                    <p className="text-2xl sm:text-3xl font-bold text-slate-900">{formatCurrency(selectedProductData.price)}</p>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-3 rounded-full border border-slate-200 bg-slate-50 px-4 py-2.5">
+                    <div className="flex items-center gap-2 sm:gap-3 rounded-full border border-slate-200 bg-slate-50 px-3 sm:px-4 py-2 sm:py-2.5">
                       <button
                         type="button"
                         onClick={() => handleQuantityChange(selectedProductData.id, -1)}
                         disabled={!cart[selectedProductData.id]}
-                        className="flex h-7 w-7 items-center justify-center rounded-full text-slate-600 transition hover:bg-white hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-40"
+                        className="flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full text-slate-600 transition hover:bg-white hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-40"
                       >
-                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <svg className="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" />
                         </svg>
                       </button>
-                      <span className="min-w-[24px] text-center text-base font-semibold text-slate-900">{cart[selectedProductData.id] || 0}</span>
+                      <span className="min-w-[20px] sm:min-w-[24px] text-center text-sm sm:text-base font-semibold text-slate-900">{cart[selectedProductData.id] || 0}</span>
                       <button
                         type="button"
                         onClick={() => handleQuantityChange(selectedProductData.id, 1)}
-                        className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 text-white transition hover:bg-slate-800"
+                        className="flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-slate-900 text-white transition hover:bg-slate-800"
                       >
-                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <svg className="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
                         </svg>
                       </button>

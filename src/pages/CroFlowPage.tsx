@@ -9,14 +9,27 @@ type ResearchForm = {
   organization: string
   email: string
   phone: string
+  projectType: string
+  services: {
+    studyDesign: boolean
+    regulatoryStrategy: boolean
+    monitoringAudit: boolean
+    vendorOversight: boolean
+    biostatistics: boolean
+    dataManagement: boolean
+    medicalWriting: boolean
+    qualitySOPs: boolean
+    training: boolean
+    pvSystem: boolean
+    pvCaseProcessing: boolean
+    pvAggregateReports: boolean
+    pvSignalManagement: boolean
+    pvAudits: boolean
+  }
+  studyPhase: string
   indication: string
-  studyType: string
-  sampleSize: string
-  startWindow: string
-  needsSiteSupport: boolean
-  needsDataFabric: boolean
-  hasIrbApproval: boolean
-  ndaReady: boolean
+  timeline: string
+  budgetRange: string
   notes: string
 }
 
@@ -25,22 +38,35 @@ const defaultForm: ResearchForm = {
   organization: '',
   email: '',
   phone: '',
+  projectType: '',
+  services: {
+    studyDesign: false,
+    regulatoryStrategy: false,
+    monitoringAudit: false,
+    vendorOversight: false,
+    biostatistics: false,
+    dataManagement: false,
+    medicalWriting: false,
+    qualitySOPs: false,
+    training: false,
+    pvSystem: false,
+    pvCaseProcessing: false,
+    pvAggregateReports: false,
+    pvSignalManagement: false,
+    pvAudits: false,
+  },
+  studyPhase: '',
   indication: '',
-  studyType: '',
-  sampleSize: '',
-  startWindow: '',
-  needsSiteSupport: false,
-  needsDataFabric: true,
-  hasIrbApproval: false,
-  ndaReady: false,
+  timeline: '',
+  budgetRange: '',
   notes: '',
 }
 
 const steps = [
   { title: 'Profile', description: 'Who is reaching out' },
-  { title: 'Study intent', description: 'What you plan to research' },
-  { title: 'Governance', description: 'Ethics and compliance' },
-  { title: 'Review & submit', description: 'Send to CRO desk' },
+  { title: 'Service needs', description: 'What services you require' },
+  { title: 'Project details', description: 'Study phase and timeline' },
+  { title: 'Review & submit', description: 'Send to consulting desk' },
 ]
 
 const CroFlowPage = () => {
@@ -89,28 +115,22 @@ const CroFlowPage = () => {
   const validateStep = () => {
     if (stepIndex === 0) {
       if (!form.fullName.trim()) return 'Share the primary contact name so we know who to reach out to.'
-      if (!form.organization.trim()) return 'Tell us which lab or organization is submitting this intake.'
+      if (!form.organization.trim()) return 'Tell us which organization or company is submitting this intake.'
       const email = form.email.trim()
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return 'Add a valid work email so the invite reaches you.'
       if (form.phone.trim().length < 8) return 'Add a reachable mobile number (min 8 digits).'
     }
     if (stepIndex === 1) {
-      if (!form.indication.trim()) return 'Describe the therapeutic focus so we can staff the right leads.'
-      if (!form.studyType) return 'Select the study type to unlock the next step.'
-      if (!form.sampleSize.trim()) return 'Add an estimated sample size for planning.'
-      if (!form.startWindow) return 'Choose a tentative start window.'
+      const hasService = Object.values(form.services).some((v) => v === true)
+      if (!hasService) return 'Select at least one service you need assistance with.'
+      if (!form.projectType) return 'Select the project type to proceed.'
+    }
+    if (stepIndex === 2) {
+      if (!form.studyPhase) return 'Select the study phase for your project.'
+      if (!form.indication.trim()) return 'Describe the therapeutic area or indication.'
+      if (!form.timeline.trim()) return 'Provide an estimated timeline or start window.'
     }
     return null
-  }
-
-  const handleNext = () => {
-    const error = validateStep()
-    if (error) {
-      setStepError(error)
-      return
-    }
-    setStepError(null)
-    setStepIndex((prev) => Math.min(prev + 1, steps.length - 1))
   }
 
   const handleBack = () => {
@@ -135,22 +155,52 @@ const CroFlowPage = () => {
 
   const renderStep = () => {
     if (submitted) {
+      const selectedServices = Object.entries(form.services)
+        .filter(([_, value]) => value === true)
+        .map(([key]) => {
+          const serviceNames: Record<string, string> = {
+            studyDesign: 'Protocol Design',
+            regulatoryStrategy: 'Regulatory Strategy',
+            monitoringAudit: 'Monitoring & Audit',
+            vendorOversight: 'Vendor Oversight',
+            biostatistics: 'Biostatistics',
+            dataManagement: 'Data Management',
+            medicalWriting: 'Medical Writing',
+            qualitySOPs: 'Quality & SOPs',
+            training: 'Training',
+            pvSystem: 'PV System Setup',
+            pvCaseProcessing: 'PV Case Processing',
+            pvAggregateReports: 'PV Aggregate Reports',
+            pvSignalManagement: 'PV Signal Management',
+            pvAudits: 'PV Audits',
+          }
+          return serviceNames[key] || key
+        })
+
       return (
         <div className="space-y-4 rounded-3xl border border-emerald-200 bg-emerald-50/80 p-6 text-sm text-slate-700">
-          <p className="text-base font-semibold text-emerald-800">Submitted to Research Desk</p>
-          <p>We will respond in under 24 hours with a study discovery call slot.</p>
+          <p className="text-base font-semibold text-emerald-800">Submitted to Consulting Desk</p>
+          <p>We will respond within 24 hours with a discovery call slot and initial proposal.</p>
           <dl className="space-y-2 text-sm">
             <div className="flex items-center justify-between">
               <dt className="text-slate-500">Primary contact</dt>
               <dd className="font-semibold text-slate-900">{form.fullName || 'NA'}</dd>
             </div>
             <div className="flex items-center justify-between">
-              <dt className="text-slate-500">Focus area</dt>
-              <dd className="font-semibold text-slate-900">{form.indication || 'TBD'}</dd>
+              <dt className="text-slate-500">Organization</dt>
+              <dd className="font-semibold text-slate-900">{form.organization || 'NA'}</dd>
             </div>
             <div className="flex items-center justify-between">
-              <dt className="text-slate-500">Preferred start</dt>
-              <dd className="font-semibold text-slate-900">{form.startWindow || 'To be discussed'}</dd>
+              <dt className="text-slate-500">Project type</dt>
+              <dd className="font-semibold text-slate-900">{form.projectType || 'TBD'}</dd>
+            </div>
+            <div className="flex items-center justify-between">
+              <dt className="text-slate-500">Services requested</dt>
+              <dd className="font-semibold text-slate-900">{selectedServices.length} service(s)</dd>
+            </div>
+            <div className="flex items-center justify-between">
+              <dt className="text-slate-500">Timeline</dt>
+              <dd className="font-semibold text-slate-900">{form.timeline || 'To be discussed'}</dd>
             </div>
           </dl>
           <Link
@@ -173,17 +223,17 @@ const CroFlowPage = () => {
               value={form.fullName}
               onChange={(event) => handleChange('fullName', event.target.value)}
               className="mt-1 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base outline-none transition focus:border-slate-900"
-              placeholder="Dr. Aditi Rao"
+              placeholder="Your full name"
             />
           </label>
           <label className="block text-sm font-semibold text-slate-900">
-            Organization / Lab
+            Organization / Company
             <input
               type="text"
               value={form.organization}
               onChange={(event) => handleChange('organization', event.target.value)}
               className="mt-1 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base outline-none transition focus:border-slate-900"
-              placeholder="Genome Valley Translational Lab"
+              placeholder="e.g., Pharma company, CRO, Research lab"
             />
           </label>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -194,7 +244,7 @@ const CroFlowPage = () => {
                 value={form.email}
                 onChange={(event) => handleChange('email', event.target.value)}
                 className="mt-1 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base outline-none transition focus:border-slate-900"
-                placeholder="research@betaserrata.com"
+                placeholder="your.email@company.com"
               />
             </label>
             <label className="block text-sm font-semibold text-slate-900">
@@ -214,70 +264,186 @@ const CroFlowPage = () => {
 
     if (stepIndex === 1) {
       return (
-        <div className="space-y-4">
-          <label className="block text-sm font-semibold text-slate-900">
-            Therapeutic focus
-            <input
-              type="text"
-              value={form.indication}
-              onChange={(event) => handleChange('indication', event.target.value)}
-              className="mt-1 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base outline-none transition focus:border-slate-900"
-              placeholder="Autoimmune pain, oncology, metabolic"
-            />
-          </label>
-          <label className="block text-sm font-semibold text-slate-900">
-            Study type
+        <div className="space-y-6">
+          <div>
+            <label className="block text-sm font-semibold text-slate-900 mb-3">
+              Project type
+            </label>
             <select
-              value={form.studyType}
-              onChange={(event) => handleChange('studyType', event.target.value)}
-              className="mt-1 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base outline-none transition focus:border-slate-900"
+              value={form.projectType}
+              onChange={(event) => handleChange('projectType', event.target.value)}
+              className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base outline-none transition focus:border-slate-900"
             >
-              <option value="">Select an option</option>
-              <option value="observational">Observational registry</option>
-              <option value="interventional">Interventional (Phase I/II)</option>
-              <option value="post-market">Post market surveillance</option>
-              <option value="digital-therapeutic">Digital therapeutic validation</option>
+              <option value="">Select project type</option>
+              <option value="ba-be">BA/BE Study</option>
+              <option value="phase-i">Phase I Trial</option>
+              <option value="phase-ii-iii">Phase II/III Trial</option>
+              <option value="regulatory">Regulatory Submission</option>
+              <option value="pv">Pharmacovigilance</option>
+              <option value="quality">Quality & Training</option>
+              <option value="other">Other</option>
             </select>
-          </label>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="block text-sm font-semibold text-slate-900">
-              Target sample size
-              <input
-                type="number"
-                min={0}
-                value={form.sampleSize}
-                onChange={(event) => handleChange('sampleSize', event.target.value)}
-                className="mt-1 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base outline-none transition focus:border-slate-900"
-                placeholder="120 participants"
-              />
-            </label>
-            <label className="block text-sm font-semibold text-slate-900">
-              Desired start window
-              <input
-                type="month"
-                value={form.startWindow}
-                onChange={(event) => handleChange('startWindow', event.target.value)}
-                className="mt-1 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base outline-none transition focus:border-slate-900"
-              />
-            </label>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-sm text-slate-600">
-            <label className="flex items-center gap-3">
-              <input
-                type="checkbox"
-                checked={form.needsSiteSupport}
-                onChange={(event) => handleChange('needsSiteSupport', event.target.checked)}
-              />
-              Need investigator site activation support
-            </label>
-            <label className="mt-2 flex items-center gap-3">
-              <input
-                type="checkbox"
-                checked={form.needsDataFabric}
-                onChange={(event) => handleChange('needsDataFabric', event.target.checked)}
-              />
-              Need unified data capture & remote monitoring fabric
-            </label>
+
+          <div>
+            <p className="text-sm font-semibold text-slate-900 mb-3">Select services needed</p>
+            <div className="space-y-3">
+              <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-700 mb-3">Study Design & Regulatory</p>
+                <div className="space-y-2">
+                  <label className="flex items-center gap-3 text-sm text-slate-700">
+                    <input
+                      type="checkbox"
+                      checked={form.services.studyDesign}
+                      onChange={(event) => handleChange('services', { ...form.services, studyDesign: event.target.checked })}
+                      className="rounded border-slate-300"
+                    />
+                    <span>Protocol design (BA/BE, Phase I)</span>
+                  </label>
+                  <label className="flex items-center gap-3 text-sm text-slate-700">
+                    <input
+                      type="checkbox"
+                      checked={form.services.regulatoryStrategy}
+                      onChange={(event) => handleChange('services', { ...form.services, regulatoryStrategy: event.target.checked })}
+                      className="rounded border-slate-300"
+                    />
+                    <span>Regulatory strategy (CDSCO, FDA, EMA)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-700 mb-3">Monitoring & Audit</p>
+                <div className="space-y-2">
+                  <label className="flex items-center gap-3 text-sm text-slate-700">
+                    <input
+                      type="checkbox"
+                      checked={form.services.monitoringAudit}
+                      onChange={(event) => handleChange('services', { ...form.services, monitoringAudit: event.target.checked })}
+                      className="rounded border-slate-300"
+                    />
+                    <span>Independent monitoring & GCP compliance</span>
+                  </label>
+                  <label className="flex items-center gap-3 text-sm text-slate-700">
+                    <input
+                      type="checkbox"
+                      checked={form.services.vendorOversight}
+                      onChange={(event) => handleChange('services', { ...form.services, vendorOversight: event.target.checked })}
+                      className="rounded border-slate-300"
+                    />
+                    <span>CRO/vendor oversight & audits</span>
+                  </label>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-700 mb-3">Data & Medical Writing</p>
+                <div className="space-y-2">
+                  <label className="flex items-center gap-3 text-sm text-slate-700">
+                    <input
+                      type="checkbox"
+                      checked={form.services.biostatistics}
+                      onChange={(event) => handleChange('services', { ...form.services, biostatistics: event.target.checked })}
+                      className="rounded border-slate-300"
+                    />
+                    <span>Biostatistics & PK/BE analysis</span>
+                  </label>
+                  <label className="flex items-center gap-3 text-sm text-slate-700">
+                    <input
+                      type="checkbox"
+                      checked={form.services.dataManagement}
+                      onChange={(event) => handleChange('services', { ...form.services, dataManagement: event.target.checked })}
+                      className="rounded border-slate-300"
+                    />
+                    <span>Data management & QC</span>
+                  </label>
+                  <label className="flex items-center gap-3 text-sm text-slate-700">
+                    <input
+                      type="checkbox"
+                      checked={form.services.medicalWriting}
+                      onChange={(event) => handleChange('services', { ...form.services, medicalWriting: event.target.checked })}
+                      className="rounded border-slate-300"
+                    />
+                    <span>Medical writing (protocols, CSRs, CTD)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-700 mb-3">Quality & Training</p>
+                <div className="space-y-2">
+                  <label className="flex items-center gap-3 text-sm text-slate-700">
+                    <input
+                      type="checkbox"
+                      checked={form.services.qualitySOPs}
+                      onChange={(event) => handleChange('services', { ...form.services, qualitySOPs: event.target.checked })}
+                      className="rounded border-slate-300"
+                    />
+                    <span>SOP development & quality systems</span>
+                  </label>
+                  <label className="flex items-center gap-3 text-sm text-slate-700">
+                    <input
+                      type="checkbox"
+                      checked={form.services.training}
+                      onChange={(event) => handleChange('services', { ...form.services, training: event.target.checked })}
+                      className="rounded border-slate-300"
+                    />
+                    <span>GCP & BA/BE training</span>
+                  </label>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-700 mb-3">Pharmacovigilance</p>
+                <div className="space-y-2">
+                  <label className="flex items-center gap-3 text-sm text-slate-700">
+                    <input
+                      type="checkbox"
+                      checked={form.services.pvSystem}
+                      onChange={(event) => handleChange('services', { ...form.services, pvSystem: event.target.checked })}
+                      className="rounded border-slate-300"
+                    />
+                    <span>PV system setup & governance</span>
+                  </label>
+                  <label className="flex items-center gap-3 text-sm text-slate-700">
+                    <input
+                      type="checkbox"
+                      checked={form.services.pvCaseProcessing}
+                      onChange={(event) => handleChange('services', { ...form.services, pvCaseProcessing: event.target.checked })}
+                      className="rounded border-slate-300"
+                    />
+                    <span>ICSR case processing support</span>
+                  </label>
+                  <label className="flex items-center gap-3 text-sm text-slate-700">
+                    <input
+                      type="checkbox"
+                      checked={form.services.pvAggregateReports}
+                      onChange={(event) => handleChange('services', { ...form.services, pvAggregateReports: event.target.checked })}
+                      className="rounded border-slate-300"
+                    />
+                    <span>Aggregate reports (PSUR, DSUR, RMP)</span>
+                  </label>
+                  <label className="flex items-center gap-3 text-sm text-slate-700">
+                    <input
+                      type="checkbox"
+                      checked={form.services.pvSignalManagement}
+                      onChange={(event) => handleChange('services', { ...form.services, pvSignalManagement: event.target.checked })}
+                      className="rounded border-slate-300"
+                    />
+                    <span>Signal management & safety strategy</span>
+                  </label>
+                  <label className="flex items-center gap-3 text-sm text-slate-700">
+                    <input
+                      type="checkbox"
+                      checked={form.services.pvAudits}
+                      onChange={(event) => handleChange('services', { ...form.services, pvAudits: event.target.checked })}
+                      className="rounded border-slate-300"
+                    />
+                    <span>PV audits & inspection readiness</span>
+                  </label>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )
@@ -286,26 +452,60 @@ const CroFlowPage = () => {
     if (stepIndex === 2) {
       return (
         <div className="space-y-4">
-          <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-sm text-slate-600">
-            <label className="flex items-start gap-3">
-              <input
-                type="checkbox"
-                checked={form.hasIrbApproval}
-                onChange={(event) => handleChange('hasIrbApproval', event.target.checked)}
-              />
-              <span>
-                IRB/IEC approval secured
-                <span className="block text-xs text-slate-500">We can co-create if still in progress.</span>
-              </span>
-            </label>
-            <label className="mt-3 flex items-start gap-3">
-              <input type="checkbox" checked={form.ndaReady} onChange={(event) => handleChange('ndaReady', event.target.checked)} />
-              <span>
-                NDA ready for signature
-                <span className="block text-xs text-slate-500">We share our click-wrap template on submission.</span>
-              </span>
-            </label>
-          </div>
+          <label className="block text-sm font-semibold text-slate-900">
+            Study phase
+            <select
+              value={form.studyPhase}
+              onChange={(event) => handleChange('studyPhase', event.target.value)}
+              className="mt-1 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base outline-none transition focus:border-slate-900"
+            >
+              <option value="">Select study phase</option>
+              <option value="ba-be">BA/BE Study</option>
+              <option value="phase-i">Phase I</option>
+              <option value="phase-ii">Phase II</option>
+              <option value="phase-iii">Phase III</option>
+              <option value="post-market">Post-market</option>
+              <option value="regulatory">Regulatory submission</option>
+              <option value="pv-only">Pharmacovigilance only</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+          <label className="block text-sm font-semibold text-slate-900">
+            Therapeutic area / Indication
+            <input
+              type="text"
+              value={form.indication}
+              onChange={(event) => handleChange('indication', event.target.value)}
+              className="mt-1 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base outline-none transition focus:border-slate-900"
+              placeholder="e.g., Autoimmune, Oncology, Metabolic disorders"
+            />
+          </label>
+          <label className="block text-sm font-semibold text-slate-900">
+            Estimated timeline / Start window
+            <input
+              type="text"
+              value={form.timeline}
+              onChange={(event) => handleChange('timeline', event.target.value)}
+              className="mt-1 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base outline-none transition focus:border-slate-900"
+              placeholder="e.g., Q2 2024, 3-6 months, Immediate"
+            />
+          </label>
+          <label className="block text-sm font-semibold text-slate-900">
+            Budget range (optional)
+            <select
+              value={form.budgetRange}
+              onChange={(event) => handleChange('budgetRange', event.target.value)}
+              className="mt-1 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base outline-none transition focus:border-slate-900"
+            >
+              <option value="">Select budget range</option>
+              <option value="under-5">Under INR 5 lakhs</option>
+              <option value="5-10">INR 5-10 lakhs</option>
+              <option value="10-25">INR 10-25 lakhs</option>
+              <option value="25-50">INR 25-50 lakhs</option>
+              <option value="50-plus">INR 50+ lakhs</option>
+              <option value="discuss">To be discussed</option>
+            </select>
+          </label>
           <label className="block text-sm font-semibold text-slate-900">
             Additional context
             <textarea
@@ -313,12 +513,34 @@ const CroFlowPage = () => {
               value={form.notes}
               onChange={(event) => handleChange('notes', event.target.value)}
               className="mt-1 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-slate-900"
-              placeholder="Tell us about endpoints, recruitment geography, or tech stack expectations."
+              placeholder="Share any specific requirements, regulatory pathway details, or other relevant information."
             />
           </label>
         </div>
       )
     }
+
+    const selectedServices = Object.entries(form.services)
+      .filter(([_, value]) => value === true)
+      .map(([key]) => {
+        const serviceNames: Record<string, string> = {
+          studyDesign: 'Protocol Design',
+          regulatoryStrategy: 'Regulatory Strategy',
+          monitoringAudit: 'Monitoring & Audit',
+          vendorOversight: 'Vendor Oversight',
+          biostatistics: 'Biostatistics',
+          dataManagement: 'Data Management',
+          medicalWriting: 'Medical Writing',
+          qualitySOPs: 'Quality & SOPs',
+          training: 'Training',
+          pvSystem: 'PV System Setup',
+          pvCaseProcessing: 'PV Case Processing',
+          pvAggregateReports: 'PV Aggregate Reports',
+          pvSignalManagement: 'PV Signal Management',
+          pvAudits: 'PV Audits',
+        }
+        return serviceNames[key] || key
+      })
 
     return (
       <div className="space-y-4">
@@ -329,17 +551,28 @@ const CroFlowPage = () => {
               <span className="text-slate-500">Contact:</span> <span className="font-semibold text-slate-900">{form.fullName || 'Pending'}</span>
             </li>
             <li>
-              <span className="text-slate-500">Study:</span>{' '}
-              <span className="font-semibold text-slate-900">{form.studyType || 'Select study type'}</span>
+              <span className="text-slate-500">Organization:</span> <span className="font-semibold text-slate-900">{form.organization || 'Pending'}</span>
+            </li>
+            <li>
+              <span className="text-slate-500">Project type:</span>{' '}
+              <span className="font-semibold text-slate-900">{form.projectType || 'Not selected'}</span>
+            </li>
+            <li>
+              <span className="text-slate-500">Study phase:</span>{' '}
+              <span className="font-semibold text-slate-900">{form.studyPhase || 'Not selected'}</span>
+            </li>
+            <li>
+              <span className="text-slate-500">Services:</span>{' '}
+              <span className="font-semibold text-slate-900">{selectedServices.length > 0 ? selectedServices.join(', ') : 'None selected'}</span>
             </li>
             <li>
               <span className="text-slate-500">Timeline:</span>{' '}
-              <span className="font-semibold text-slate-900">{form.startWindow || 'Set preferred month'}</span>
+              <span className="font-semibold text-slate-900">{form.timeline || 'Not specified'}</span>
             </li>
           </ul>
         </div>
         <p className="text-sm text-slate-500">
-          Hit submit to notify our CRO desk. You will receive a calendar invite with a curated research partner within 24 hours.
+          Hit submit to notify our consulting desk. You will receive a response within 24 hours with a discovery call slot and initial proposal.
         </p>
       </div>
     )
@@ -350,7 +583,7 @@ const CroFlowPage = () => {
       <Navbar items={navItems} activeSection="home" onNavigate={handleNavigate} />
       
       {/* Hero Section */}
-      <section className="hero-section hero-section-height relative overflow-hidden">
+      <section className="hero-section relative overflow-hidden pt-20 sm:pt-24 min-h-[calc(100vh-5rem)] sm:min-h-[calc(100vh-6rem)] flex items-center">
         <div className="hero-soft-glow" aria-hidden="true" />
         
         {/* Abstract shapes matching homepage */}
@@ -363,7 +596,7 @@ const CroFlowPage = () => {
           <div className="hero-shape hero-shape-6" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10 h-full flex items-center">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10 w-full py-12 sm:py-16">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 w-full">
             <div className="flex flex-col justify-center">
               <div className="status-pill w-fit">
@@ -371,24 +604,24 @@ const CroFlowPage = () => {
                 <span className="text-xs uppercase tracking-widest">Clinical Research</span>
               </div>
               <h1 className="hero-title mt-6 text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-                Accelerate Your
+                Independent Clinical Research
                 <span className="block mt-2">
-                  Clinical Research
+                  Consulting Services
                 </span>
               </h1>
               <p className="hero-lead mt-4 text-sm sm:text-base">
-                Partner with our expert CRO team to design, execute, and manage your clinical trials. From protocol development to regulatory submission, we provide end-to-end research support with transparent workflows and real-time collaboration.
+                Expert consulting for BA/BE studies, Phase I–III trials, and pharmacovigilance. From study design and regulatory strategy to monitoring, data management, and quality systems—we provide specialized support tailored to your needs.
               </p>
-              <div className="hero-actions mt-6">
+              <div className="hero-actions mt-6 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                 <button
                   onClick={() => document.getElementById('registration-section')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="cta-primary text-xs uppercase tracking-widest"
+                  className="cta-primary text-xs uppercase tracking-widest w-full sm:w-auto"
                 >
                   Register Your Study
                 </button>
                 <button
                   onClick={() => document.getElementById('registration-section')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="cta-secondary text-xs uppercase tracking-widest"
+                  className="cta-secondary text-xs uppercase tracking-widest w-full sm:w-auto"
                 >
                   View Services
                 </button>
@@ -404,8 +637,8 @@ const CroFlowPage = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-slate-900">Protocol Development</p>
-                      <p className="text-xs text-slate-600">IRB-ready documentation</p>
+                      <p className="text-sm font-semibold text-slate-900">Study Design & Regulatory</p>
+                      <p className="text-xs text-slate-600">BA/BE protocols, regulatory strategy</p>
                     </div>
                   </div>
                 </div>
@@ -413,12 +646,12 @@ const CroFlowPage = () => {
                   <div className="flex items-center gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-100">
                       <svg className="h-6 w-6 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                       </svg>
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-slate-900">Site Management</p>
-                      <p className="text-xs text-slate-600">Multi-center coordination</p>
+                      <p className="text-sm font-semibold text-slate-900">Monitoring & Audit</p>
+                      <p className="text-xs text-slate-600">GCP compliance, vendor oversight</p>
                     </div>
                   </div>
                 </div>
@@ -430,8 +663,8 @@ const CroFlowPage = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-slate-900">Data Analytics</p>
-                      <p className="text-xs text-slate-600">Real-time insights & reporting</p>
+                      <p className="text-sm font-semibold text-slate-900">Data & Statistics</p>
+                      <p className="text-xs text-slate-600">Biostatistics, medical writing</p>
                     </div>
                   </div>
                 </div>
@@ -443,8 +676,8 @@ const CroFlowPage = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-slate-900">Regulatory Support</p>
-                      <p className="text-xs text-slate-600">FDA & EMA compliance</p>
+                      <p className="text-sm font-semibold text-slate-900">Pharmacovigilance</p>
+                      <p className="text-xs text-slate-600">PV systems, signal management</p>
                     </div>
                   </div>
                 </div>

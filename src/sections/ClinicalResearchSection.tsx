@@ -1,24 +1,35 @@
 const consultPills = [
-  'Phase I–IV oversight',
-  'Medical writing & dossiers',
-  'Specialized BA/BE readiness',
+  'BA/BE & Phase I–III',
+  'Regulatory strategy',
+  'Pharmacovigilance',
+  'Quality & training',
 ]
 
 const clinicalServices = [
   {
-    title: 'Phase Trial Management & Strategy',
+    title: 'Study Design & Regulatory Strategy',
     description:
-      'Expert consultation for the strategic design, planning, and execution oversight of Phase I through Phase IV clinical trials to ensure robust data collection and regulatory adherence.',
+      'Design BA/BE and Phase I protocols, advise on regulatory pathways (CDSCO, US FDA, EMA), and prepare key documents including protocols, ICF, IB, and clinical development plans.',
   },
   {
-    title: 'Medical Writing Services',
+    title: 'Monitoring, Audit & Vendor Oversight',
     description:
-      'Preparation of study protocols, informed consent forms, clinical study reports, and regulatory dossiers with absolute clarity, accuracy, and compliance to ICH-GCP guidelines.',
+      'Independent monitoring of BA/BE and Phase I sites, audit of CROs and bioanalytical labs, and ongoing vendor oversight for sponsors who have outsourced full trials.',
   },
   {
-    title: 'Specialized BA/BE Studies',
+    title: 'Data, Statistics & Medical Writing',
     description:
-      'Dedicated consulting for bioavailability and bioequivalence studies that accelerate generic molecule approvals and deliver market-ready submissions.',
+      'Biostatistics support, PK/BE analysis, data review and QC, medical writing for protocols, CSRs, clinical summaries for ANDA/CTD, and publications.',
+  },
+  {
+    title: 'Quality, SOPs & Training',
+    description:
+      'Develop and review SOPs for BA/BE units and clinical operations, conduct GCP and BA/BE-specific training, and help set up quality systems for regulatory inspections.',
+  },
+  {
+    title: 'Pharmacovigilance Consulting',
+    description:
+      'PV system setup and governance, ICSR case processing support, aggregate reports (PSUR, DSUR, RMP), signal management, and PV audits for inspection readiness.',
   },
 ]
 
@@ -32,18 +43,18 @@ const ClinicalResearchSection = () => (
     <div className="mx-auto max-w-6xl px-6 sm:px-8 relative z-10">
       <div className="research-header" data-aos="fade-up">
         <span className="research-tag">Clinical Research</span>
-        <h2 className="research-heading">Clinical research consulting: from phase trials to specialized BA/BE studies.</h2>
+        <h2 className="research-heading">Independent Clinical Research Consulting Services</h2>
         <p className="research-subtext">
-          Betaserrata provides specialized clinical research consultation designed to accelerate your product development lifecycle.
+          Expert consulting for BA/BE studies, Phase I–III trials, and pharmacovigilance. From study design and regulatory strategy to monitoring, data management, and quality systems—we provide specialized support tailored to your needs.
         </p>
       </div>
 
       <div className="research-stack">
         <div className="research-consult-panel" data-aos="fade-up">
           <div className="micro-label">Expert support</div>
-          <h3>From early strategy to dossier-ready evidence.</h3>
+          <h3>Comprehensive clinical development and safety consulting.</h3>
           <p>
-            We coordinate BA/BE study planning, medical writing, and full-phase oversight so botanical and natural health innovations move through regulatory gates with confidence.
+            We provide independent consulting covering BA/BE studies, Phase I–III trials, and pharmacovigilance. Our services include study design, regulatory strategy, monitoring, data management, quality systems, and PV support to accelerate your clinical development.
           </p>
           <div className="research-pill-grid">
             {consultPills.map((pill) => (

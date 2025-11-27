@@ -13,7 +13,7 @@ const HeroSection = () => {
   }
 
   return (
-  <section id="home" className="hero-section hero-section-height relative overflow-hidden">
+  <section id="home" className="hero-section relative overflow-hidden pt-20 sm:pt-24 min-h-[calc(100vh-5rem)] sm:min-h-[calc(100vh-6rem)] flex items-center">
     <div className="hero-soft-glow" aria-hidden="true" />
     
     {/* Abstract shapes similar to the image */}
@@ -37,7 +37,7 @@ const HeroSection = () => {
       <div className="hero-shape hero-shape-6" />
     </div>
     
-    <div className="mx-auto grid max-w-6xl gap-8 px-4 sm:px-6 md:grid-cols-[1.05fr_0.95fr] md:items-center relative z-10 w-full h-full">
+    <div className="mx-auto grid max-w-6xl gap-6 sm:gap-8 px-4 sm:px-6 md:grid-cols-[1.05fr_0.95fr] md:items-center relative z-10 w-full py-12 sm:py-16">
       <div className="hero-visual relative z-10 order-1 md:order-2" data-aos="fade-left" data-aos-delay="200">
         <div className="hero-card-light">
           <div className="status-pill absolute right-6 top-6">
