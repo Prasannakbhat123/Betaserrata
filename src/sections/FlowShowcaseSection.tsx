@@ -6,7 +6,7 @@ const flows = [
     eyebrow: 'Product experience',
     title: 'Direct-to-clinic product purchase',
     description: 'Two curated SKUs, live cart math, delivery notes, and OTP verification ready for a commerce handoff.',
-    stats: ['2 premium SKUs', 'Cart + billing summary', 'OTP code 111111'],
+    stats: ['2 premium SKUs', 'Cart + billing summary', 'OTP verification', 'Delivery notes'],
     image: '/assets/product.png',
     accent: 'from-white via-[#fff6ec] to-[#fde5c8]',
     buttonLabel: 'View product demo',
@@ -17,7 +17,7 @@ const flows = [
     eyebrow: 'Clinical Research Consulting',
     title: 'Independent Clinical Research Consulting Services',
     description: 'Expert consulting for BA/BE studies, Phase I–III trials, and pharmacovigilance. From study design and regulatory strategy to monitoring, data management, and quality systems.',
-    stats: ['Study Design & Regulatory', 'Monitoring & Audit', 'Data & Medical Writing', 'Quality & Training', 'Pharmacovigilance'],
+    stats: ['Study Design & Regulatory', 'Monitoring & Audit', 'Data & Medical Writing', 'Quality & Training'],
     image:
       'https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80&sat=-15',
     accent: 'from-white via-[#f3f8ff] to-[#e1ecff]',
@@ -42,14 +42,14 @@ const FlowShowcaseSection = () => {
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-stretch">
           {flows.map((flow) => (
             <article
               key={flow.id}
-              className="group relative overflow-hidden rounded-3xl border border-[#e3d5c9] bg-white shadow-lg transition hover:shadow-2xl"
+              className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-[#e3d5c9] bg-white shadow-lg transition hover:shadow-2xl"
             >
               {/* Image Section */}
-              <div className="relative h-64 overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100">
+              <div className="relative h-64 shrink-0 overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100">
                 <img 
                   src={flow.image} 
                   alt={flow.title} 
@@ -64,17 +64,17 @@ const FlowShowcaseSection = () => {
               </div>
 
               {/* Content Section */}
-              <div className="flex flex-col gap-6 p-6">
+              <div className="flex flex-1 flex-col gap-6 p-6">
                 <div className="space-y-3">
                   <h3 className="text-2xl font-bold text-[#4a3326]">{flow.title}</h3>
                   <p className="text-sm leading-relaxed text-[#7a6654]">{flow.description}</p>
                 </div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-1 gap-3">
+                <div className="flex-1 grid grid-cols-1 gap-3">
                   {flow.stats.map((stat) => (
                     <div key={stat} className="flex items-center gap-3 rounded-xl border border-[#eadfd2] bg-[#f7f2ed] px-4 py-2.5">
-                      <svg className="h-4 w-4 flex-shrink-0 text-[#8c6a45]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                      <svg className="h-4 w-4 shrink-0 text-[#8c6a45]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-sm font-medium text-[#664c38]">{stat}</span>
@@ -86,7 +86,7 @@ const FlowShowcaseSection = () => {
                 <button
                   type="button"
                   onClick={() => navigate(flow.href)}
-                  className="group/btn inline-flex items-center justify-center gap-2 rounded-xl bg-[#8c6a45] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#7b5c3b]"
+                  className="group/btn mt-auto inline-flex items-center justify-center gap-2 rounded-xl bg-[#8c6a45] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#7b5c3b]"
                 >
                   {flow.buttonLabel}
                   <svg 
