@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
 import Lenis from 'lenis'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -10,10 +11,14 @@ import AdvisoryBoardSection from './sections/AdvisoryBoardSection'
 import CdmoSection from './sections/CdmoSection'
 import ClinicalResearchSection from './sections/ClinicalResearchSection'
 import ContactSection from './sections/ContactSection'
+import FlowShowcaseSection from './sections/FlowShowcaseSection'
 import HeroSection from './sections/HeroSection'
 import TrainingSection from './sections/TrainingSection'
+import ProductFlowPage from './pages/ProductFlowPage'
+import ProductCheckoutPage from './pages/ProductCheckoutPage'
+import CroFlowPage from './pages/CroFlowPage'
 
-const App = () => {
+const HomePage = () => {
   const [activeSection, setActiveSection] = useState<NavSection>('home')
 
   useEffect(() => {
@@ -148,6 +153,7 @@ const App = () => {
       <Navbar items={navItems} activeSection={activeSection} onNavigate={handleNavigate} />
       <main>
         <HeroSection />
+        <FlowShowcaseSection />
         <AdvisoryBoardSection />
         <CdmoSection />
         <ClinicalResearchSection />
@@ -167,5 +173,14 @@ const App = () => {
     </div>
   )
 }
+
+const App = () => (
+  <Routes>
+    <Route path="/" element={<HomePage />} />
+    <Route path="/product" element={<ProductFlowPage />} />
+    <Route path="/product/checkout" element={<ProductCheckoutPage />} />
+    <Route path="/cro" element={<CroFlowPage />} />
+  </Routes>
+)
 
 export default App
