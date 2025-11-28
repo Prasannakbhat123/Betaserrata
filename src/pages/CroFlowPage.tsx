@@ -610,7 +610,7 @@ const CroFlowPage = () => {
                 </span>
               </h1>
               <p className="hero-lead mt-4 text-sm sm:text-base">
-                Expert consulting for BA/BE studies, Phase I–III trials, and pharmacovigilance. From study design and regulatory strategy to monitoring, data management, and quality systems—we provide specialized support tailored to your needs.
+                Your dedicated partner providing complete, expert guidance and meticulous operational oversight specifically for BA/BE studies and seamless support across all clinical trial phases.
               </p>
               <div className="hero-actions mt-6 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                 <button

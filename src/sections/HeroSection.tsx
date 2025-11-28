@@ -50,10 +50,10 @@ const HeroSection = () => {
 
       <div className="relative z-10 space-y-4 order-2 md:order-1">
         <h1 className="hero-title text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl" data-aos="fade-up" data-aos-delay="50">
-          Betaserrta: Botanical extract contract manufacturing &amp; clinical research support.
+          Betaserrata: Your Partner in Plant-Based Product Development and Clinical Research Consultancy Services
         </h1>
         <p className="hero-lead text-sm sm:text-base" data-aos="fade-up" data-aos-delay="120">
-          Expert solutions for your natural health products—uniting formulation, regulatory know-how, and study guidance under one roof.
+          At Betaserrata, we bridge the gap between nature's power and scientific rigor. As a leading CDMO specializing in plant-based products, we offer comprehensive services from concept to commercialization, ensuring the highest quality and efficacy for your botanical formulations.
         </p>
 
         <div className="hero-actions" data-aos="fade-up" data-aos-delay="200">

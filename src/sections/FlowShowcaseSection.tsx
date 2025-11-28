@@ -16,7 +16,7 @@ const flows = [
     id: 'cro',
     eyebrow: 'Clinical Research Consulting',
     title: 'Independent Clinical Research Consulting Services',
-    description: 'Expert consulting for BA/BE studies, Phase I–III trials, and pharmacovigilance. From study design and regulatory strategy to monitoring, data management, and quality systems.',
+    description: 'Your dedicated partner providing complete, expert guidance and meticulous operational oversight specifically for BA/BE studies and seamless support across all clinical trial phases.',
     stats: ['Study Design & Regulatory', 'Monitoring & Audit', 'Data & Medical Writing', 'Quality & Training'],
     image:
       'https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80&sat=-15',

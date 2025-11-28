@@ -45,7 +45,7 @@ const ClinicalResearchSection = () => (
         <span className="research-tag">Clinical Research</span>
         <h2 className="research-heading">Independent Clinical Research Consulting Services</h2>
         <p className="research-subtext">
-          Expert consulting for BA/BE studies, Phase I–III trials, and pharmacovigilance. From study design and regulatory strategy to monitoring, data management, and quality systems—we provide specialized support tailored to your needs.
+          Your dedicated partner providing complete, expert guidance and meticulous operational oversight specifically for BA/BE studies and seamless support across all clinical trial phases.
         </p>
       </div>
 
@@ -54,7 +54,7 @@ const ClinicalResearchSection = () => (
           <div className="micro-label">Expert support</div>
           <h3>Comprehensive clinical development and safety consulting.</h3>
           <p>
-            We provide independent consulting covering BA/BE studies, Phase I–III trials, and pharmacovigilance. Our services include study design, regulatory strategy, monitoring, data management, quality systems, and PV support to accelerate your clinical development.
+            Your dedicated partner providing complete, expert guidance and meticulous operational oversight specifically for BA/BE studies and seamless support across all clinical trial phases. We provide independent consulting covering BA/BE studies, Phase I–III trials, and pharmacovigilance.
           </p>
           <div className="research-pill-grid">
             {consultPills.map((pill) => (
