@@ -202,7 +202,7 @@ const ProductCheckoutPage = () => {
                   .filter((product) => cart[product.id])
                   .map((product) => (
                     <div key={product.id} className="flex items-center gap-4 rounded-2xl border border-slate-100 bg-white/70 p-4">
-                      <img src={product.image} alt={product.name} className="h-16 w-16 rounded-2xl object-cover" />
+                      <img src={product.image} alt={product.name} className="h-16 w-16 rounded-2xl object-contain bg-slate-50" />
                       <div className="flex-1">
                         <p className="text-sm font-semibold text-slate-900">{product.name}</p>
                         <p className="text-xs text-slate-500">{product.volume}</p>

@@ -33,12 +33,12 @@ const FlowShowcaseSection = () => {
     <section className="flow-showcase-section relative overflow-hidden bg-gradient-to-b from-white via-[#faf6f1] to-white py-20" aria-labelledby="flows-heading">
       <div className="mx-auto flex max-w-6xl flex-col gap-16 px-4 sm:px-6 lg:px-8">
         <div className="space-y-4 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#8c6a45]">Experience demos</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#8c6a45]">Our Services</p>
           <h2 id="flows-heading" className="text-3xl font-semibold text-[#5a4030] sm:text-4xl">
-            Explore Interactive Flows
+            Product Purchase & Clinical Research Consulting
           </h2>
           <p className="mx-auto max-w-3xl text-base text-[#7a6654]">
-            Product buyers can add to cart, review billing, and confirm by OTP. Clinical research partners can register for consulting services covering BA/BE studies, Phase I–III trials, monitoring, data management, and pharmacovigilance.
+            Direct-to-clinic product ordering with secure checkout, and comprehensive clinical research consulting services for BA/BE studies, Phase I–III trials, and pharmacovigilance.
           </p>
         </div>
 

@@ -68,22 +68,32 @@ export const researchHighlights = [
 
 export const trainingTracks = [
   {
-    title: 'Foundations of Clinical Excellence',
-    duration: '6-week immersion',
+    title: 'ICH GCP Training',
+    duration: 'Comprehensive',
     focus:
-      'Protocol mastery, GCP certifications, and simulated investigator meetings guided by live global faculty.',
+      'ICH E6(R3) principles, risk‑based quality management, and participant‑centred trial conduct. Protocol implementation, informed consent, and safety reporting.',
+    icon: 'shield',
   },
   {
-    title: 'Digital Trial Command',
-    duration: '4-week sprint',
+    title: 'ICMR Guidelines and Ethics',
+    duration: 'Structured modules',
     focus:
-      'Hands-on use of unified data platforms, risk-based monitoring, and AI-enabled signal management labs.',
+      'ICMR national ethical guidelines, ethics review processes, and Indian regulatory expectations. Role‑specific training for investigators and Ethics Committee members.',
+    icon: 'document',
   },
   {
-    title: 'Regulatory Translation Studio',
-    duration: 'Executive capsule',
+    title: 'Quality Management Services',
+    duration: 'Training & consulting',
     focus:
-      'Case-based workshops turning strategy into submission-ready narratives for FDA, EMA, and PMDA.',
+      'Quality systems: SOPs, risk‑based monitoring, CAPA management, and audit readiness. Support for internal audits, vendor oversight, and continuous improvement.',
+    icon: 'check-circle',
+  },
+  {
+    title: 'Computer System Validation (CSV)',
+    duration: 'End‑to‑end training',
+    focus:
+      'CSV training for GxP‑relevant systems: lifecycle approach, user requirements, risk assessment, validation planning, and change control. GAMP compliance.',
+    icon: 'server',
   },
 ]
 

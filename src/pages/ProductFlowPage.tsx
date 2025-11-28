@@ -4,6 +4,7 @@ import { productCatalog, formatCurrency } from '../data/products'
 import Navbar from '../components/Navbar'
 import { navItems } from '../data'
 import Lenis from 'lenis'
+import TrustBannerSection from '../sections/TrustBannerSection'
 
 const CART_STORAGE_KEY = 'betaserrataCart'
 
@@ -127,7 +128,7 @@ const ProductFlowPage = () => {
       <Navbar items={navItems} activeSection="home" onNavigate={handleNavigate} />
       
       {/* Hero Section */}
-      <section className="hero-section relative overflow-hidden pt-20 sm:pt-24 min-h-[calc(100vh-5rem)] sm:min-h-[calc(100vh-6rem)] flex items-center">
+      <section className="hero-section relative overflow-hidden min-h-[calc(100vh-5rem)] sm:min-h-[calc(100vh-6rem)] flex items-center">
         <div className="hero-soft-glow" aria-hidden="true" />
         
         {/* Abstract shapes matching homepage */}
@@ -175,24 +176,24 @@ const ProductFlowPage = () => {
               <div className="relative grid grid-cols-2 gap-2 sm:gap-4">
                 <div className="space-y-2 sm:space-y-4">
                   <img
-                    src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=600&q=80"
-                    alt="Ayurvedic herbs"
+                    src="/assets/tablet.jpg"
+                    alt="Betaserrata Botanical Complex"
                     className="h-32 sm:h-48 w-full rounded-xl sm:rounded-2xl object-cover shadow-xl"
                   />
                   <img
-                    src="https://images.unsplash.com/photo-1464639351491-a172c2aa2911?auto=format&fit=crop&w=600&q=80"
-                    alt="Botanical capsules"
+                    src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80"
+                    alt="Ayurvedic herbs and botanicals"
                     className="h-40 sm:h-64 w-full rounded-xl sm:rounded-2xl object-cover shadow-xl"
                   />
                 </div>
                 <div className="space-y-2 sm:space-y-4 pt-4 sm:pt-8">
                   <img
-                    src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80"
-                    alt="Herbal gel"
+                    src="/assets/oil.jpg"
+                    alt="Rapid Recovery Transdermal Gel"
                     className="h-40 sm:h-64 w-full rounded-xl sm:rounded-2xl object-cover shadow-xl"
                   />
                   <img
-                    src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=80"
+                    src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80"
                     alt="Natural ingredients"
                     className="h-32 sm:h-48 w-full rounded-xl sm:rounded-2xl object-cover shadow-xl"
                   />
@@ -202,6 +203,8 @@ const ProductFlowPage = () => {
           </div>
         </div>
       </section>
+
+      <TrustBannerSection />
 
       {/* Products Section */}
       <section id="products-section" className="pb-16 pt-16">
@@ -219,8 +222,8 @@ const ProductFlowPage = () => {
                 key={product.id}
                 className="flex flex-col sm:flex-row gap-4 sm:gap-6 rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 shadow-sm transition hover:shadow-md"
               >
-                <div className="relative h-48 sm:h-40 w-full sm:w-40 flex-shrink-0 overflow-hidden rounded-xl bg-slate-100">
-                  <img src={product.image} alt={product.name} className="h-full w-full object-cover" />
+                <div className="relative h-48 sm:h-40 w-full sm:w-40 flex-shrink-0 overflow-hidden rounded-xl bg-slate-100 flex items-center justify-center">
+                  <img src={product.image} alt={product.name} className="h-full w-full object-contain" />
                   <div className="absolute left-2 top-2 rounded-md bg-white/95 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-slate-700 shadow-sm backdrop-blur-sm">
                     {product.badge}
                   </div>
@@ -410,8 +413,8 @@ const ProductFlowPage = () => {
             </button>
 
             <div className="grid gap-4 sm:gap-6 lg:gap-8 p-4 sm:p-6 lg:p-8 md:grid-cols-[300px_1fr] lg:grid-cols-[400px_1fr]">
-              <div className="relative h-64 sm:h-80 md:h-auto overflow-hidden rounded-xl sm:rounded-2xl bg-slate-100">
-                <img src={selectedProductData.image} alt={selectedProductData.name} className="h-full w-full object-cover" />
+              <div className="relative h-64 sm:h-80 md:h-auto overflow-hidden rounded-xl sm:rounded-2xl bg-slate-100 flex items-center justify-center">
+                <img src={selectedProductData.image} alt={selectedProductData.name} className="h-full w-full object-contain" />
                 <div className="absolute left-2 top-2 sm:left-4 sm:top-4 rounded-lg bg-white/95 px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wide text-slate-700 shadow-sm backdrop-blur-sm">
                   {selectedProductData.badge}
                 </div>

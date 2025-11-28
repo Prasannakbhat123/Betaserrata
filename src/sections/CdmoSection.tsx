@@ -1,72 +1,82 @@
-const cdmoHighlights = [
-  {
-    label: '01',
-    title: 'Concept development',
-    detail:
-      'Collaborative blueprinting sessions aligning botanical IP, dosage forms, and regulatory pathways before the first batch is produced.',
-  },
-  {
-    label: '02',
-    title: 'High-purity extraction',
-    detail:
-      'Closed-loop extraction, solvent recovery, and compositional fingerprinting calibrated for premium herbal actives.',
-  },
-  {
-    label: '03',
-    title: 'Market-ready release',
-    detail:
-      'Stability, QA, and documentation support so every lot is compliant and ready for global launch windows.',
-  },
-]
+import { useNavigate } from 'react-router-dom'
+import { productCatalog, formatCurrency } from '../data/products'
 
-const CdmoSection = () => (
-  <section id="cdmo" className="section-padding cdmo-section relative overflow-hidden">
-    <div className="section-shapes section-shapes--cdmo" aria-hidden="true">
-      <div className="section-shape section-shape-1" />
-      <div className="section-shape section-shape-2" />
-      <div className="section-shape section-shape-3" />
-    </div>
-    <div className="mx-auto max-w-6xl px-6 sm:px-8 relative z-10">
-      <div className="cdmo-shell">
-        <div className="cdmo-panel glass-panel-light" data-aos="fade-right">
+const CdmoSection = () => {
+  const navigate = useNavigate()
+
+  return (
+    <section id="cdmo" className="section-padding cdmo-section relative overflow-hidden">
+      <div className="section-shapes section-shapes--cdmo" aria-hidden="true">
+        <div className="section-shape section-shape-1" />
+        <div className="section-shape section-shape-2" />
+        <div className="section-shape section-shape-3" />
+      </div>
+      <div className="mx-auto max-w-6xl px-6 sm:px-8 relative z-10">
+        <div className="mb-8 text-center" data-aos="fade-up">
           <span className="cdmo-tag">CDMO Services</span>
-          <h2 className="cdmo-heading">Specialized formulation and manufacturing with high-purity herbal extracts.</h2>
-          <p className="cdmo-subtext">
-            Betaserrata operates as a dedicated and specialised channel in the creation of premium-quality formulations built upon high-purity herbal extracts. We offer comprehensive, end-to-end manufacturing solutions, from concept development.
+          <h2 className="cdmo-heading mt-4">Premium Formulations</h2>
+          <p className="cdmo-subtext mt-3 max-w-2xl mx-auto">
+            Specialized formulation and manufacturing with high-purity herbal extracts.
           </p>
-          <p className="cdmo-subtext cdmo-subtext-muted">
-            Partner with Betaserrata to transform your vision into a market-ready product, backed by specialized botanical knowledge and a commitment to pharmaceutical-grade quality.
-          </p>
-
-          {/* <div className="cdmo-chip-row">
-            {cdmoChips.map((chip) => (
-              <span key={chip} className="cdmo-chip">
-                {chip}
-              </span>
-            ))}
-          </div> */}
-
-          <div className="cdmo-legacy">
-            <span>Our legacy</span>
-            <a href="https://betaserrata.de" target="_blank" rel="noreferrer">
-              betaserrata.de
-            </a>
-          </div>
         </div>
 
-        <div className="cdmo-highlight-stack" data-aos="fade-left">
-          {cdmoHighlights.map((item, index) => (
-            <article key={item.title} className="cdmo-highlight-card" data-aos-delay={index * 100}>
-              <span className="cdmo-highlight-index">{item.label}</span>
-              <h3 className="cdmo-highlight-title">{item.title}</h3>
-              <p className="cdmo-highlight-detail">{item.detail}</p>
+        <div className="grid gap-6 md:grid-cols-2" data-aos="fade-up" data-aos-delay="100">
+          {productCatalog.map((product) => (
+            <article
+              key={product.id}
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-xl"
+            >
+              {/* Image Section - Full coverage */}
+              <div className="relative h-80 w-full overflow-hidden">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                />
+                <div className="absolute left-4 top-4 rounded-lg bg-white/95 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-800 shadow-md backdrop-blur-sm">
+                  {product.badge}
+                </div>
+              </div>
+
+              {/* Content Section - Minimal */}
+              <div className="p-6">
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-slate-900 leading-tight">{product.name}</h3>
+                  <p className="mt-1 text-xs font-medium text-slate-500 uppercase tracking-wide">{product.volume}</p>
+                </div>
+
+                {/* Price and CTA */}
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-1">Price</p>
+                    <p className="text-2xl font-bold text-slate-900">{formatCurrency(product.price)}</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => navigate('/product')}
+                    className="inline-flex items-center gap-2 rounded-xl bg-[#8c6a45] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#7b5c3b] active:scale-95"
+                  >
+                    Shop now
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-7-7 7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
             </article>
           ))}
         </div>
       </div>
-    </div>
-  </section>
-)
+    </section>
+  )
+}
 
 export default CdmoSection
 

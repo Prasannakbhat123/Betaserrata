@@ -13,7 +13,7 @@ const HeroSection = () => {
   }
 
   return (
-  <section id="home" className="hero-section relative overflow-hidden pt-20 sm:pt-24 min-h-[calc(100vh-5rem)] sm:min-h-[calc(100vh-6rem)] flex items-center">
+  <section id="home" className="hero-section relative overflow-hidden min-h-[calc(100vh-5rem)] sm:min-h-[calc(100vh-6rem)] flex items-center">
     <div className="hero-soft-glow" aria-hidden="true" />
     
     {/* Abstract shapes similar to the image */}

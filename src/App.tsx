@@ -14,6 +14,7 @@ import ContactSection from './sections/ContactSection'
 import FlowShowcaseSection from './sections/FlowShowcaseSection'
 import HeroSection from './sections/HeroSection'
 import TrainingSection from './sections/TrainingSection'
+import TrustBannerSection from './sections/TrustBannerSection'
 import ProductFlowPage from './pages/ProductFlowPage'
 import ProductCheckoutPage from './pages/ProductCheckoutPage'
 import CroFlowPage from './pages/CroFlowPage'
@@ -154,6 +155,7 @@ const HomePage = () => {
       <main>
         <HeroSection />
         <FlowShowcaseSection />
+        <TrustBannerSection />
         <AdvisoryBoardSection />
         <CdmoSection />
         <ClinicalResearchSection />

@@ -167,7 +167,7 @@ const CroFlowPage = () => {
             dataManagement: 'Data Management',
             medicalWriting: 'Medical Writing',
             qualitySOPs: 'Quality & SOPs',
-            training: 'Training',
+            training: 'Training (ICH GCP, ICMR Ethics, Quality Management, CSV)',
             pvSystem: 'PV System Setup',
             pvCaseProcessing: 'PV Case Processing',
             pvAggregateReports: 'PV Aggregate Reports',
@@ -388,7 +388,7 @@ const CroFlowPage = () => {
                       onChange={(event) => handleChange('services', { ...form.services, training: event.target.checked })}
                       className="rounded border-slate-300"
                     />
-                    <span>GCP & BA/BE training</span>
+                    <span>Training (ICH GCP, ICMR Ethics, Quality Management, CSV)</span>
                   </label>
                 </div>
               </div>
@@ -532,7 +532,7 @@ const CroFlowPage = () => {
           dataManagement: 'Data Management',
           medicalWriting: 'Medical Writing',
           qualitySOPs: 'Quality & SOPs',
-          training: 'Training',
+          training: 'Training (ICH GCP, ICMR Ethics, Quality Management, CSV)',
           pvSystem: 'PV System Setup',
           pvCaseProcessing: 'PV Case Processing',
           pvAggregateReports: 'PV Aggregate Reports',
@@ -583,7 +583,7 @@ const CroFlowPage = () => {
       <Navbar items={navItems} activeSection="home" onNavigate={handleNavigate} />
       
       {/* Hero Section */}
-      <section className="hero-section relative overflow-hidden pt-20 sm:pt-24 min-h-[calc(100vh-5rem)] sm:min-h-[calc(100vh-6rem)] flex items-center">
+      <section className="hero-section relative overflow-hidden min-h-[calc(100vh-5rem)] sm:min-h-[calc(100vh-6rem)] flex items-center">
         <div className="hero-soft-glow" aria-hidden="true" />
         
         {/* Abstract shapes matching homepage */}
