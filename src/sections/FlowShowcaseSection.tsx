@@ -3,10 +3,16 @@ import { useNavigate } from 'react-router-dom'
 const flows = [
   {
     id: 'product',
-    eyebrow: 'Product experience',
-    title: 'Direct-to-clinic product purchase',
-    description: 'Two curated SKUs, live cart math, delivery notes, and OTP verification ready for a commerce handoff.',
-    stats: ['2 premium SKUs', 'Cart + billing summary', 'OTP verification', 'Delivery notes'],
+    eyebrow: 'Plant-based Boswellia tablets',
+    title: 'Naturally anti-inflammatory support',
+    description:
+      'Standardized Indian Boswellia serrata extract formulated as an easy-to-access, plant-based tablet for people managing joint discomfort and stiffness.',
+    stats: [
+      'Standardized Boswellia serrata extract',
+      'Supports joint comfort and mobility',
+      'Plant-based, over-the-counter format',
+      'Designed for osteoarthritis-prone patients',
+    ],
     image: '/assets/product.png',
     accent: 'from-white via-[#fff6ec] to-[#fde5c8]',
     buttonLabel: 'View product demo',

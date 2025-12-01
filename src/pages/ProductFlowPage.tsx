@@ -155,7 +155,7 @@ const ProductFlowPage = () => {
                 </span>
               </h1>
               <p className="hero-lead mt-4 text-sm sm:text-base">
-                Discover our scientifically-backed plant-based formulations that blend nature's power with modern pharmaceutical standards. Each product is GMP-certified and third-party tested for purity and potency.
+                Naturally anti-inflammatory Indian Boswellia—the original plant-based extract from the Boswellia serrata tree. Our scientifically-backed formulations blend nature's power with modern pharmaceutical standards, helping reduce inflammation and supporting joint comfort. Each product is GMP-certified and third-party tested for purity and potency.
               </p>
               <div className="hero-actions mt-6 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                 <button

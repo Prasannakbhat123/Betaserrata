@@ -16,15 +16,15 @@ export const productCatalog: Product[] = [
   {
     id: 'betaserrata-complex',
     name: 'Betaserrata Plant-Based Complex',
-    description: 'Plant-based tablet pairing standardized Boswellia with adaptogenic plant extracts for whole-body calm.',
+    description: 'Naturally anti-inflammatory Indian Boswellia extract. Also known as Indian frankincense, it may help reduce inflammation and benefit people with certain health conditions.',
     price: 1299,
     badge: 'Clinical Batch',
     volume: '30-day system',
     image: '/assets/tablet.jpg',
-    highlights: ['65% boswellic acids', 'Independent potency cert', 'GMP bottled capsules'],
+    highlights: ['Standardized Boswellia serrata', 'Naturally anti-inflammatory', 'Supports joint comfort'],
     rating: 4.8,
     reviewCount: 127,
-    detailedDescription: 'Our flagship Plant-Based Complex combines standardized Boswellia serrata extract (65% boswellic acids) with a proprietary blend of adaptogenic plant extracts including Ashwagandha, Tulsi, and Guduchi. Each capsule is manufactured in our GMP-certified facility and undergoes rigorous third-party testing for potency and purity. The 30-day system is designed to support natural inflammatory response, promote joint comfort, and enhance overall vitality. Recommended dosage: 2 capsules daily with meals. Free from artificial additives, gluten, and common allergens.',
+    detailedDescription: 'Indian Boswellia, also known as Indian frankincense, is a plant-based extract from the Boswellia serrata tree. As an effective anti-inflammatory, it can help reduce pain and may prevent the loss of cartilage. Current evidence suggests beneficial effects in treating osteoarthritis of the knee, with effects that may last for some time after treatment is stopped. Our standardized formulation prevents the production of inflammatory substances in the joints, making it an effective natural remedy for joint discomfort and stiffness. Each tablet is manufactured in our GMP-certified facility and undergoes rigorous third-party testing for potency and purity. Recommended dosage: 2 tablets daily with meals. Free from artificial additives, gluten, and common allergens.',
   },
   {
     id: 'betaserrata-gel',
