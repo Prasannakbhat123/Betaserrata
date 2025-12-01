@@ -18,8 +18,7 @@ const flows = [
     title: 'Independent Clinical Research Consulting Services',
     description: 'Your dedicated partner providing complete, expert guidance and meticulous operational oversight specifically for BA/BE studies and seamless support across all clinical trial phases.',
     stats: ['Study Design & Regulatory', 'Monitoring & Audit', 'Data & Medical Writing', 'Quality & Training'],
-    image:
-      'https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80&sat=-15',
+    image: '/assets/research.jpg',
     accent: 'from-white via-[#f3f8ff] to-[#e1ecff]',
     buttonLabel: 'View CRO intake',
     href: '/cro',

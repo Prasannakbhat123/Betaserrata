@@ -16,7 +16,7 @@ const CdmoSection = () => {
           <span className="cdmo-tag">CDMO Services</span>
           <h2 className="cdmo-heading mt-4">Premium Formulations</h2>
           <p className="cdmo-subtext mt-3 max-w-2xl mx-auto">
-            At Betaserrata, we bridge the gap between nature's power and scientific rigor. As a leading CDMO specializing in plant-based products, we offer comprehensive services from concept to commercialization, ensuring the highest quality and efficacy for your botanical formulations.
+            At Betaserrata, we bridge the gap between nature's power and scientific rigor. As a leading CDMO specializing in plant-based products, we offer comprehensive services from concept to commercialization, ensuring the highest quality and efficacy for your plant-based formulations.
           </p>
         </div>
 

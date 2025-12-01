@@ -132,7 +132,7 @@ const ProductCheckoutPage = () => {
           <div className="mx-auto flex max-w-3xl flex-col gap-4 px-4 pt-16 text-center sm:px-6">
           <p className="text-xs font-semibold uppercase tracking-[0.32em] text-slate-500">Checkout</p>
           <h1 className="text-3xl font-semibold text-slate-900">Your cart is empty</h1>
-          <p className="text-sm text-slate-600">Return to the product page to add the Ayurvedic tablet or oil-gel to your selection.</p>
+          <p className="text-sm text-slate-600">Return to the product page to add the plant-based tablet or gel to your selection.</p>
           <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <button
               type="button"

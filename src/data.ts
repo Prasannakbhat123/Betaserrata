@@ -45,12 +45,6 @@ export const cdmoHighlights = [
       'Real-time deviation intelligence with predictive release analytics ensures compliant, confident scale up from pilot to commercial.',
     metrics: '99.4% batch right-first-time',
   },
-  {
-    title: 'Sustainable Pathway Lab',
-    description:
-      'Green chemistry and solvent recovery programs anchored in lifecycle assessments aligned with ESG benchmarks.',
-    metrics: '28% waste reduction',
-  },
 ]
 
 export const researchHighlights = [

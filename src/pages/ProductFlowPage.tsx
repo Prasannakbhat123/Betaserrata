@@ -149,13 +149,13 @@ const ProductFlowPage = () => {
                 <span className="text-xs uppercase tracking-widest">Clinically Validated</span>
               </div>
               <h1 className="hero-title mt-4 sm:mt-6 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight">
-                Premium Ayurvedic
+                Premium Plant-Based
                 <span className="block mt-2">
                   Therapeutics
                 </span>
               </h1>
               <p className="hero-lead mt-4 text-sm sm:text-base">
-                Discover our scientifically-backed botanical formulations that blend ancient Ayurvedic wisdom with modern pharmaceutical standards. Each product is GMP-certified and third-party tested for purity and potency.
+                Discover our scientifically-backed plant-based formulations that blend nature's power with modern pharmaceutical standards. Each product is GMP-certified and third-party tested for purity and potency.
               </p>
               <div className="hero-actions mt-6 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                 <button
@@ -177,12 +177,12 @@ const ProductFlowPage = () => {
                 <div className="space-y-2 sm:space-y-4">
                   <img
                     src="/assets/tablet.jpg"
-                    alt="Betaserrata Botanical Complex"
+                    alt="Betaserrata Plant-Based Complex"
                     className="h-32 sm:h-48 w-full rounded-xl sm:rounded-2xl object-cover shadow-xl"
                   />
                   <img
                     src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80"
-                    alt="Ayurvedic herbs and botanicals"
+                    alt="Plant-based ingredients"
                     className="h-40 sm:h-64 w-full rounded-xl sm:rounded-2xl object-cover shadow-xl"
                   />
                 </div>

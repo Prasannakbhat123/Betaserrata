@@ -53,7 +53,7 @@ const HeroSection = () => {
           Betaserrata: Your Partner in Plant-Based Product Development and Clinical Research Consultancy Services
         </h1>
         <p className="hero-lead text-sm sm:text-base" data-aos="fade-up" data-aos-delay="120">
-          At Betaserrata, we bridge the gap between nature's power and scientific rigor. As a leading CDMO specializing in plant-based products, we offer comprehensive services from concept to commercialization, ensuring the highest quality and efficacy for your botanical formulations.
+          At Betaserrata, we bridge the gap between nature's power and scientific rigor. As a leading CDMO specializing in plant-based products, we offer comprehensive services from concept to commercialization, ensuring the highest quality and efficacy for your plant-based formulations.
         </p>
 
         <div className="hero-actions" data-aos="fade-up" data-aos-delay="200">

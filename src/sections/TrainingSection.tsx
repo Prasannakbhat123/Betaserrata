@@ -12,11 +12,11 @@ const TrainingSection = () => (
         <div className="badge badge-sky mb-4">Clinical Research Training</div>
         <h2 className="section-heading text-3xl font-semibold text-slate-900 sm:text-4xl mb-4">
           Clinical Research Training Programs
-        </h2>
+          </h2>
         <p className="text-sm leading-relaxed text-slate-600 max-w-3xl mx-auto">
           Comprehensive training covering ICH GCP, ICMR guidelines, quality management, and computer system validation for clinical research professionals.
         </p>
-      </div>
+        </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {trainingTracks.map((track, index) => {
@@ -63,10 +63,10 @@ const TrainingSection = () => (
                 </span>
               </div>
               <p className="text-sm leading-relaxed text-slate-600 mb-4 flex-1">{track.focus}</p>
-              <button
-                type="button"
+                      <button
+                        type="button"
                 className="mt-auto inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-700 hover:text-slate-900 transition"
-              >
+                      >
                 Learn more
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3.5 w-3.5">
                   <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
