@@ -20,7 +20,7 @@ export const productCatalog: Product[] = [
     price: 1299,
     badge: 'Clinical Batch',
     volume: '30-day system',
-    image: '/assets/tablet.jpg',
+    image: '/assets/products.png',
     highlights: ['Standardized Boswellia serrata', 'Naturally anti-inflammatory', 'Supports joint comfort'],
     rating: 4.8,
     reviewCount: 127,

@@ -176,7 +176,7 @@ const ProductFlowPage = () => {
               <div className="relative grid grid-cols-2 gap-2 sm:gap-4">
                 <div className="space-y-2 sm:space-y-4">
                   <img
-                    src="/assets/tablet.jpg"
+                    src="/assets/products.png"
                     alt="Betaserrata Plant-Based Complex"
                     className="h-32 sm:h-48 w-full rounded-xl sm:rounded-2xl object-cover shadow-xl"
                   />
