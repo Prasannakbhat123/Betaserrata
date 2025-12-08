@@ -25,10 +25,10 @@ const Navbar = ({ items, activeSection, onNavigate }: NavbarProps) => {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8">
         <div className="flex items-center gap-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl ">
-            <img src="/assets/logo.png" alt="Betaserrata logo" className="h-9 w-auto" />
+            <img src="/assets/logo.png" alt="Betaserrata logo" className="h-11 w-auto" />
           </div>
           <div>
-            <p className="font-display text-lg font-semibold tracking-wide text-slate-900">Betaserrata</p>
+            <p className="font-display text-2xl font-semibold tracking-wide text-slate-900">Betaserrata</p>
             {/* <p className="text-xs uppercase tracking-[0.26em] text-slate-400">
               Integrated Clinical &amp; Pharma Solutions
             </p> */}

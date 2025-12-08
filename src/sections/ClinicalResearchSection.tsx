@@ -63,12 +63,6 @@ const ClinicalResearchSection = () => (
               </span>
             ))}
           </div>
-          <a href="https://betaserrata.de" target="_blank" rel="noreferrer" className="research-link">
-            Visit betaserrata.de
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-4 w-4">
-              <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
         </div>
 
         <div className="research-services-grid">
