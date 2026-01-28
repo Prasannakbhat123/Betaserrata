@@ -1,7 +1,6 @@
 const consultPills = [
-  'BA/BE & Phase I–III',
+  'BA/BE study design',
   'Regulatory strategy',
-  'Pharmacovigilance',
   'Quality & training',
 ]
 
@@ -9,12 +8,12 @@ const clinicalServices = [
   {
     title: 'Study Design & Regulatory Strategy',
     description:
-      'Design BA/BE and Phase I protocols, advise on regulatory pathways (CDSCO, US FDA, EMA), and prepare key documents including protocols, ICF, IB, and clinical development plans.',
+      'Design BA/BE study protocols, advise on regulatory pathways (CDSCO, US FDA, EMA), and prepare key documents including protocols, ICF, IB, and clinical development plans.',
   },
   {
     title: 'Monitoring, Audit & Vendor Oversight',
     description:
-      'Independent monitoring of BA/BE and Phase I sites, audit of CROs and bioanalytical labs, and ongoing vendor oversight for sponsors who have outsourced full trials.',
+      'Independent monitoring of BA/BE sites, audit of CROs and bioanalytical labs, and ongoing vendor oversight for sponsors who have outsourced full projects.',
   },
   {
     title: 'Data, Statistics & Medical Writing',
@@ -25,11 +24,6 @@ const clinicalServices = [
     title: 'Quality, SOPs & Training',
     description:
       'Develop and review SOPs for BA/BE units and clinical operations, conduct GCP and BA/BE-specific training, and help set up quality systems for regulatory inspections.',
-  },
-  {
-    title: 'Pharmacovigilance Consulting',
-    description:
-      'PV system setup and governance, ICSR case processing support, aggregate reports (PSUR, DSUR, RMP), signal management, and PV audits for inspection readiness.',
   },
 ]
 
@@ -42,10 +36,10 @@ const ClinicalResearchSection = () => (
     </div>
     <div className="mx-auto max-w-6xl px-6 sm:px-8 relative z-10">
       <div className="research-header" data-aos="fade-up">
-        <span className="research-tag">Clinical Research</span>
-        <h2 className="research-heading">Independent Clinical Research Consulting Services</h2>
+        <span className="research-tag">Clinical Research Consultancy Services</span>
+        <h2 className="research-heading">Independent Clinical Research Consultancy Services</h2>
         <p className="research-subtext">
-          Your dedicated partner providing complete, expert guidance and meticulous operational oversight specifically for BA/BE studies and seamless support across all clinical trial phases.
+          Your dedicated partner providing complete, expert guidance and meticulous operational oversight specifically for BA/BE studies.
         </p>
       </div>
 
@@ -54,7 +48,7 @@ const ClinicalResearchSection = () => (
           <div className="micro-label">Expert support</div>
           <h3>Comprehensive clinical development and safety consulting.</h3>
           <p>
-            Your dedicated partner providing complete, expert guidance and meticulous operational oversight specifically for BA/BE studies and seamless support across all clinical trial phases. We provide independent consulting covering BA/BE studies, Phase I–III trials, and pharmacovigilance.
+            Your dedicated partner providing complete, expert guidance and meticulous operational oversight specifically for BA/BE studies. We provide independent consulting covering BA/BE studies and related regulatory and quality activities.
           </p>
           <div className="research-pill-grid">
             {consultPills.map((pill) => (

@@ -10,7 +10,7 @@ export const navItems: Array<{ id: NavSection; label: string }> = [
   { id: 'home', label: 'Home' },
   { id: 'advisory-board', label: 'Advisory Board' },
   { id: 'cdmo', label: 'CDMO' },
-  { id: 'clinical-research', label: 'Clinical Research' },
+  { id: 'clinical-research', label: 'CRCS' },
   { id: 'training', label: 'Clinical Research Training' },
   { id: 'contact', label: 'Contact Us' },
 ]
@@ -65,7 +65,7 @@ export const trainingTracks = [
     title: 'ICH GCP Training',
     duration: 'Comprehensive',
     focus:
-      'ICH E6(R3) principles, risk‑based quality management, and participant‑centred trial conduct. Protocol implementation, informed consent, and safety reporting.',
+      'ICH E6(R3) principles, risk‑based quality management, and participant‑centred study conduct. Protocol implementation, informed consent, and safety reporting.',
     icon: 'shield',
   },
   {
@@ -101,7 +101,7 @@ export const milestones = [
   {
     year: '2019',
     headline: 'Global Partner Network expanded',
-    summary: 'Onboarded strategic alliances across APAC, EU, and LATAM for 24/7 trial orchestration.',
+    summary: 'Onboarded strategic alliances across APAC, EU, and LATAM for 24/7 project orchestration.',
   },
   {
     year: '2023',
@@ -111,7 +111,7 @@ export const milestones = [
 ]
 
 export const metrics = [
-  { value: '120+', label: 'Integrated global trials' },
+  { value: '120+', label: 'Integrated global projects' },
   { value: '45', label: 'Therapeutic areas optimized' },
   { value: '18', label: 'Regulatory jurisdictions navigated' },
 ]

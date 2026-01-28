@@ -6,12 +6,12 @@ const flows = [
     eyebrow: 'Plant-based Boswellia tablets',
     title: 'Naturally anti-inflammatory support',
     description:
-      'Standardized Indian Boswellia serrata extract formulated as an easy-to-access, plant-based tablet for people managing joint discomfort and stiffness.',
+      'Contains Acetyl Kinase Boswellic Acid, a standardized Boswellia serrata extract with potent anti-inflammatory characteristics that can help relieve pain and support joint cartilage preservation. For more information, visit https://betaserrata.de.',
     stats: [
-      'Standardized Boswellia serrata extract',
-      'Supports joint comfort and mobility',
-      'Plant-based, over-the-counter format',
-      'Designed for osteoarthritis-prone patients',
+      'Contains Acetyl Kinase Boswellic Acid',
+      'Potent anti-inflammatory characteristics',
+      'Effective pain relief support',
+      'Helps prevent cartilage loss',
     ],
     image: '/assets/product.png',
     accent: 'from-white via-[#fff6ec] to-[#fde5c8]',
@@ -20,9 +20,10 @@ const flows = [
   },
   {
     id: 'cro',
-    eyebrow: 'Clinical Research Consulting',
-    title: 'Independent Clinical Research Consulting Services',
-    description: 'Your dedicated partner providing complete, expert guidance and meticulous operational oversight specifically for BA/BE studies and seamless support across all clinical trial phases.',
+    eyebrow: 'Clinical Research Consultancy Services',
+    title: 'Independent Clinical Research Consultancy Services',
+    description:
+      'Your dedicated partner providing complete, expert guidance and meticulous operational oversight specifically for BA/BE studies.',
     stats: ['Study Design & Regulatory', 'Monitoring & Audit', 'Data & Medical Writing', 'Quality & Training'],
     image: '/assets/research.jpg',
     accent: 'from-white via-[#f3f8ff] to-[#e1ecff]',
@@ -40,10 +41,10 @@ const FlowShowcaseSection = () => {
         <div className="space-y-4 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#8c6a45]">Our Services</p>
           <h2 id="flows-heading" className="text-3xl font-semibold text-[#5a4030] sm:text-4xl">
-            Product Purchase & Clinical Research Consulting
+            Product Purchase & Clinical Research Consultancy Services
           </h2>
           <p className="mx-auto max-w-3xl text-base text-[#7a6654]">
-            Direct-to-clinic product ordering with secure checkout, and comprehensive clinical research consulting services for BA/BE studies, Phase I–III trials, and pharmacovigilance.
+            Direct-to-clinic product ordering with secure checkout, and comprehensive clinical research consultancy services for BA/BE studies.
           </p>
         </div>
 

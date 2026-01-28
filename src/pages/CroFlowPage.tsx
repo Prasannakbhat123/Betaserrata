@@ -20,11 +20,6 @@ type ResearchForm = {
     medicalWriting: boolean
     qualitySOPs: boolean
     training: boolean
-    pvSystem: boolean
-    pvCaseProcessing: boolean
-    pvAggregateReports: boolean
-    pvSignalManagement: boolean
-    pvAudits: boolean
   }
   studyPhase: string
   indication: string
@@ -49,11 +44,6 @@ const defaultForm: ResearchForm = {
     medicalWriting: false,
     qualitySOPs: false,
     training: false,
-    pvSystem: false,
-    pvCaseProcessing: false,
-    pvAggregateReports: false,
-    pvSignalManagement: false,
-    pvAudits: false,
   },
   studyPhase: '',
   indication: '',
@@ -276,10 +266,7 @@ const CroFlowPage = () => {
             >
               <option value="">Select project type</option>
               <option value="ba-be">BA/BE Study</option>
-              <option value="phase-i">Phase I Trial</option>
-              <option value="phase-ii-iii">Phase II/III Trial</option>
               <option value="regulatory">Regulatory Submission</option>
-              <option value="pv">Pharmacovigilance</option>
               <option value="quality">Quality & Training</option>
               <option value="other">Other</option>
             </select>
@@ -392,57 +379,6 @@ const CroFlowPage = () => {
                   </label>
                 </div>
               </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-slate-700 mb-3">Pharmacovigilance</p>
-                <div className="space-y-2">
-                  <label className="flex items-center gap-3 text-sm text-slate-700">
-                    <input
-                      type="checkbox"
-                      checked={form.services.pvSystem}
-                      onChange={(event) => handleChange('services', { ...form.services, pvSystem: event.target.checked })}
-                      className="rounded border-slate-300"
-                    />
-                    <span>PV system setup & governance</span>
-                  </label>
-                  <label className="flex items-center gap-3 text-sm text-slate-700">
-                    <input
-                      type="checkbox"
-                      checked={form.services.pvCaseProcessing}
-                      onChange={(event) => handleChange('services', { ...form.services, pvCaseProcessing: event.target.checked })}
-                      className="rounded border-slate-300"
-                    />
-                    <span>ICSR case processing support</span>
-                  </label>
-                  <label className="flex items-center gap-3 text-sm text-slate-700">
-                    <input
-                      type="checkbox"
-                      checked={form.services.pvAggregateReports}
-                      onChange={(event) => handleChange('services', { ...form.services, pvAggregateReports: event.target.checked })}
-                      className="rounded border-slate-300"
-                    />
-                    <span>Aggregate reports (PSUR, DSUR, RMP)</span>
-                  </label>
-                  <label className="flex items-center gap-3 text-sm text-slate-700">
-                    <input
-                      type="checkbox"
-                      checked={form.services.pvSignalManagement}
-                      onChange={(event) => handleChange('services', { ...form.services, pvSignalManagement: event.target.checked })}
-                      className="rounded border-slate-300"
-                    />
-                    <span>Signal management & safety strategy</span>
-                  </label>
-                  <label className="flex items-center gap-3 text-sm text-slate-700">
-                    <input
-                      type="checkbox"
-                      checked={form.services.pvAudits}
-                      onChange={(event) => handleChange('services', { ...form.services, pvAudits: event.target.checked })}
-                      className="rounded border-slate-300"
-                    />
-                    <span>PV audits & inspection readiness</span>
-                  </label>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -461,12 +397,8 @@ const CroFlowPage = () => {
             >
               <option value="">Select study phase</option>
               <option value="ba-be">BA/BE Study</option>
-              <option value="phase-i">Phase I</option>
-              <option value="phase-ii">Phase II</option>
-              <option value="phase-iii">Phase III</option>
               <option value="post-market">Post-market</option>
               <option value="regulatory">Regulatory submission</option>
-              <option value="pv-only">Pharmacovigilance only</option>
               <option value="other">Other</option>
             </select>
           </label>
@@ -533,11 +465,6 @@ const CroFlowPage = () => {
           medicalWriting: 'Medical Writing',
           qualitySOPs: 'Quality & SOPs',
           training: 'Training (ICH GCP, ICMR Ethics, Quality Management, CSV)',
-          pvSystem: 'PV System Setup',
-          pvCaseProcessing: 'PV Case Processing',
-          pvAggregateReports: 'PV Aggregate Reports',
-          pvSignalManagement: 'PV Signal Management',
-          pvAudits: 'PV Audits',
         }
         return serviceNames[key] || key
       })
@@ -601,16 +528,16 @@ const CroFlowPage = () => {
             <div className="flex flex-col justify-center">
               <div className="status-pill w-fit">
                 <span className="status-indicator" />
-                <span className="text-xs uppercase tracking-widest">Clinical Research</span>
+                <span className="text-xs uppercase tracking-widest">Clinical Research Consultancy Services</span>
               </div>
               <h1 className="hero-title mt-6 text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-                Independent Clinical Research
+                Independent Clinical Research Consultancy Services
                 <span className="block mt-2">
-                  Consulting Services
+                  For BA/BE studies and related support
                 </span>
               </h1>
               <p className="hero-lead mt-4 text-sm sm:text-base">
-                Your dedicated partner providing complete, expert guidance and meticulous operational oversight specifically for BA/BE studies and seamless support across all clinical trial phases.
+                Your dedicated partner providing complete, expert guidance and meticulous operational oversight specifically for BA/BE studies.
               </p>
               <div className="hero-actions mt-6 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                 <button
@@ -672,12 +599,12 @@ const CroFlowPage = () => {
                   <div className="flex items-center gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-100">
                       <svg className="h-6 w-6 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-slate-900">Pharmacovigilance</p>
-                      <p className="text-xs text-slate-600">PV systems, signal management</p>
+                      <p className="text-sm font-semibold text-slate-900">Quality & Training</p>
+                      <p className="text-xs text-slate-600">SOPs, audits, and GCP-focused training</p>
                     </div>
                   </div>
                 </div>
@@ -694,7 +621,7 @@ const CroFlowPage = () => {
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.32em] text-slate-500">Study Registration</p>
-                <h2 className="mt-2 text-3xl font-semibold text-slate-900">Start Your Clinical Research Journey</h2>
+                <h2 className="mt-2 text-3xl font-semibold text-slate-900">Start Your Clinical Research Consultancy Journey</h2>
                 <p className="mt-2 text-sm text-slate-500">Complete our guided intake form to connect with our research team within 24 hours.</p>
               </div>
             </div>
