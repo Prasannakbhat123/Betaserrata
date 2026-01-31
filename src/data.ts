@@ -117,8 +117,8 @@ export const metrics = [
 ]
 
 export const contactPoints = [
-  { label: 'Global HQ', value: 'Plot 27, Genome Valley, Hyderabad, India' },
-  { label: 'North America', value: 'Boston Innovation Dock, MA' },
+  { label: 'Office', value: 'VERMA H .- 71, M.G. ROAD, SUBHASH PARK, AGRA, UTTAR PRADESH, 282010, INDIA' },
+  { label: 'Work', value: 'NH. NO. 74, ROORKEE-DEHRADUN HIGHWAY, KISHANPUR, ROORKEE, DISTT. HARIDWAR, UTTARAKHAND, INDIA' },
   { label: 'Talent', value: 'careers@betaserrata.com' },
   { label: 'Phone', value: '+1 857 555 0147' },
 ]
