@@ -188,7 +188,7 @@ const ProductFlowPage = () => {
                 </div>
                 <div className="space-y-2 sm:space-y-4 pt-4 sm:pt-8">
                   <img
-                    src="/assets/oil.jpg"
+                    src="/assets/oil.png"
                     alt="Rapid Recovery Transdermal Gel"
                     className="h-40 sm:h-64 w-full rounded-xl sm:rounded-2xl object-cover shadow-xl"
                   />

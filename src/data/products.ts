@@ -33,7 +33,7 @@ export const productCatalog: Product[] = [
     price: 899,
     badge: 'Pilot Launch',
     volume: '50 ml airless pump',
-    image: '/assets/oil.jpg',
+    image: '/assets/oil.png',
     highlights: ['Derm-tested base', 'Adaptive release polymer', 'Plant-based extracts in oil form'],
     rating: 4.6,
     reviewCount: 89,
